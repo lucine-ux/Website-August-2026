@@ -70,14 +70,14 @@
       padding: 20px;
       line-height: 1.4;
     }
-    .audio-placeholder--1 { background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460); color:rgba(255,255,255,0.7); }
-    .audio-placeholder--2 { background: linear-gradient(135deg,#0d0d1a,#1a0a2e,#2d1b47); color:rgba(255,255,255,0.7); }
-    .audio-placeholder--3 { background: linear-gradient(135deg,#0a1628,#1e2d5a,#243b73); color:rgba(255,255,255,0.7); }
-    .audio-placeholder--4 { background: linear-gradient(135deg,#0d1b2a,#1b2838,#234062); color:rgba(255,255,255,0.7); }
-    .audio-placeholder--5 { background: linear-gradient(135deg,#1a0a0a,#2d1515,#471b1b); color:rgba(255,255,255,0.7); }
-    .audio-placeholder--bundle { background: linear-gradient(135deg,#0d0d1a,#1a1535,#2a1f52); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--1 { background:var(--deep); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--2 { background:var(--deep); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--3 { background:var(--deep); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--4 { background:var(--deep); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--5 { background:var(--deep); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--bundle { background:var(--deep); color:rgba(255,255,255,0.7); }
     .product-card-full--bundle {
-      background: linear-gradient(135deg, var(--black) 0%, #1a1535 100%);
+      background:var(--deep);
       border-color: rgba(168,173,199,0.25);
     }
     .product-card-full--bundle .product-card-full__category { color: var(--amber); }
@@ -199,7 +199,7 @@
     .audio-tile__img {
       aspect-ratio: 1 / 1;
       overflow: hidden;
-      background: #1a1a2e;
+      background:var(--deep);
     }
     .audio-tile__img img {
       width: 100%;
@@ -240,6 +240,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="brand.css" />
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -267,7 +268,7 @@
     <a href="shop.html">Shop</a>
     <a href="blog.html">Writing</a>
     <a href="contact.html">Contact</a>
-    <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" rel="noopener">Free nervous system audit</a>
+    <a href="audit.html">Free nervous system audit</a>
     <a href="rewire.html" style="color:var(--plum);font-weight:600;">Join The Rewire</a>
   </div>
 <main id="main" tabindex="-1">
@@ -332,7 +333,7 @@
         </article>
 
         <!-- REWIRE CTA -->
-        <div class="shop-membership-cta" id="membershipCta" style="background:linear-gradient(135deg,var(--purple-dark) 0%,#2a1f52 100%);">
+        <div class="shop-membership-cta" id="membershipCta" style="background:var(--deep);">
           <div>
             <span style="font-family:var(--font-heading);font-size:0.8rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:10px;">Monthly Membership</span>
             <h3>Ready to actually rewire, not just cope?</h3>
@@ -354,7 +355,7 @@
 
         <!-- BUNDLE -->
         <article class="product-card-full product-card-full--featured product-card-full--bundle" data-category="audio">
-          <div class="product-card-full__image" style="background:#0d0d1a;">
+          <div class="product-card-full__image" style="background:var(--deep);">
             <img src="images/audio-bundle.jpg" alt="Deep Reset Audio Series Bundle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
             <div class="audio-placeholder audio-placeholder--bundle" style="display:none;">Deep Reset Audio Series Bundle</div>
             <span class="product-card-full__badge" style="background:var(--amber);color:var(--black);">Best Value</span>
@@ -457,7 +458,7 @@
         <h2 style="font-size:1.4rem;margin-bottom:8px;">Not sure where to start?</h2>
         <p style="color:var(--text-muted);font-size:0.92rem;max-width:460px;">Take the free Nervous System Audit. 5 minutes. It tells you exactly which pattern you're stuck in and what your nervous system actually needs to shift.</p>
       </div>
-      <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" class="btn btn--outline" style="white-space:nowrap;flex-shrink:0;">Get the Free Audit</a>
+      <a href="audit.html" class="btn btn--outline" style="white-space:nowrap;flex-shrink:0;">Get the Free Audit</a>
     </div>
   </section>
 
@@ -479,7 +480,7 @@
         <a href="shop.html">Shop</a>
         <a href="blog.html">Writing</a>
         <a href="contact.html">Contact</a>
-        <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" rel="noopener" class="footer__nav--audit">Free audit</a>
+        <a href="audit.html" class="footer__nav--audit">Free audit</a>
         <a href="https://auspicious-poetry-68204.myflodesk.com/fm5qvcum5r" target="_blank" rel="noopener">Newsletter</a>
         <a href="rewire.html" class="footer__nav--cta">The Rewire</a>
       </nav>

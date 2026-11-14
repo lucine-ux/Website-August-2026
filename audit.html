@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Nervous System Audit | Back to Breath</title>
+<meta name="description" content="A free audit for ADHD folks. Find your stress type, see how full your tank is, and get a free practice made for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Back to Breath brand: cream ground, lilac second ground, ink text, plum key words, deep plum statement, one coral action */
+  --cream:#F7F1E6; --lilac:#D9CFF0; --panel:#EDE3D1; --ink:#2A1A33; --ink-soft:#5A4A63;
+  --plum:#6B4C9A; --deep:#3B1F4A; --coral:#FF8A5B; --line:#DCCFBB;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  /* layout: one question per screen, centred column, thumb sized answers */
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:var(--plum)}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:640px;margin:0 auto;padding:18px 18px 0}
+.logo{font-family:var(--display);font-weight:600;font-size:18px;color:var(--plum);text-decoration:none}
+.progress{height:6px;background:var(--panel);border-radius:6px;overflow:hidden;max-width:640px;margin:14px auto 0;width:calc(100% - 36px)}
+.progress i{display:block;height:100%;background:var(--plum);width:0;transition:width .3s}
+main{max-width:640px;margin:0 auto;padding:28px 18px 64px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,48px);line-height:1.05;margin:0 0 14px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(25px,6vw,32px);line-height:1.15;margin:0 0 18px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:600;font-size:20px;margin:0 0 8px}
+p{margin:0 0 14px}
+.lead{font-size:19px}
+.muted{color:var(--ink-soft)} .small{font-size:15px}
+.kicker{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--plum);margin-bottom:10px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 17px var(--body);padding:14px 26px;border-radius:999px;cursor:pointer;text-decoration:none;text-align:center}
+.btn.primary{background:var(--coral);border-color:var(--coral)}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.55;cursor:default}
+.back{border:0;background:none;color:var(--ink-soft);font:500 15px var(--body);cursor:pointer;padding:6px 0;margin-bottom:10px}
+.answers{display:grid;gap:10px}
+.answers button{text-align:left;border:2px solid var(--line);background:#FFFBF4;border-radius:14px;padding:15px 18px;font:500 17px var(--body);color:var(--ink);cursor:pointer}
+.answers button:hover{border-color:var(--plum)}
+.answers button[aria-pressed="true"]{border-color:var(--plum);background:var(--lilac)}
+.answers button small{display:block;font-weight:400;color:var(--ink-soft);font-size:15px;margin-top:2px}
+:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+label{display:block;font-weight:500;margin:16px 0 6px}
+input[type=text],input[type=email],textarea{display:block;width:100%;font:17px var(--body);color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px}
+input:focus,textarea:focus{border-color:var(--plum);outline:none}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:18px 0}
+.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--plum);flex:none}
+.err{color:#9A4E12;font-weight:500;margin-top:10px}
+.card{background:#FFFBF4;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
+.card.lilac{background:var(--lilac);border-color:#C9BCE6}
+.card.deep{background:var(--deep);border-color:var(--deep);color:var(--cream)}
+.card.deep .kicker{color:var(--lilac)}
+.card.care{background:#FBE3D3;border-color:#F2C5A8}
+.tank{display:flex;gap:4px;margin:12px 0 6px}
+.tank span{flex:1;height:14px;border-radius:4px;background:rgba(247,241,230,.25)}
+.tank span.on{background:var(--coral)}
+.tanklbl{display:flex;justify-content:space-between;font-size:13px;color:var(--lilac)}
+.stat{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--plum)}
+.row{display:flex;gap:14px;align-items:center}
+.price{font-weight:700}
+ul.clean{margin:0 0 14px;padding-left:20px}
+.signoff{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start}
+.signoff img{width:150px;height:auto;border-radius:90px 90px 14px 14px;display:block}
+.sign{font-family:var(--display);font-weight:600;font-size:28px;color:var(--plum);margin:6px 0 0}
+@media (max-width:520px){.signoff{grid-template-columns:1fr}.signoff img{width:170px}}
+.foot{text-align:center;font-size:14px;color:var(--ink-soft);padding:0 18px 40px}
+@media (prefers-reduced-motion: reduce){.progress i{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><a class="logo" href="index.html">Back to Breath</a><span class="small muted" id="count"></span></header>
+<div class="progress" aria-hidden="true"><i id="bar"></i></div>
+<main id="app" aria-live="polite"></main>
+<p class="foot">This audit is a self check, not a diagnosis.</p>
+
+<script>
+/* ---------- THINGS YOU MAY NEED TO EDIT ---------- */
+var AUDIT = {
+  // The Cloudflare Worker that sends results to Flodesk and your Google Sheet.
+  ENDPOINT: "https://btb-waitlist.lucinesetian.workers.dev",
+  DECOMPRESS_URL: "/adhdecompress.html",
+  BUNDLE_URL: "https://stan.store/Backtobreath/p/deep-reset-audio-series-bundle",
+  PHOTO: "images/lucine-audit.jpg"
+};
+
+(function(){
+var QUESTIONS = [
+  {area:"empty",  t:"I wake up already tired."},
+  {area:"empty",  t:"Rest doesn't fill my tank back up."},
+  {area:"empty",  t:"Small tasks take everything I've got."},
+  {area:"on",     t:"My body feels tight, braced or tense."},
+  {area:"on",     t:"I can't switch off, even when I finally stop."},
+  {area:"on",     t:"I reach for my phone, snacks or zoning out to get through."},
+  {area:"down",   t:"I check out from people or things I care about."},
+  {area:"down",   t:"I feel flat, numb or far away from myself."},
+  {area:"edge",   t:"Little things make me snap, then I feel awful after."},
+  {area:"edge",   t:"I feel like I'm one more thing away from losing it."}
+];
+var SCALE = [["Almost always",4],["Often",3],["Sometimes",2],["Rarely",1],["Never",0]];
+
+var TYPES = {
+  avoider: {
+    felt:["Doing simple task, feeding the dogs, showering, replying to people","Hard time contacting my friends. I’m ghosting them and I’m so ashamed of it","Everything feeling like I have to convince myself to it. Almost nothing just happens or feels easy going. Even things i usually enjoy to do are feeling like a task.","That I can’t feel my self right now. I can’t do a simple task even if I know it’s good for me."],
+    moment:"I made this audio for the moment you're frozen on the couch and can't make yourself move.",
+    name:"The Avoider", pick:"I freeze, shut down or put things off.", pct:41,
+    lead:"When it all gets too much, your system hits the brakes. You freeze, put things off or shut down. Then the shame piles on top.",
+    body:"This isn't you not trying. When your nervous system is overloaded, it protects you by slowing everything down. The to do list is still there, but your body says not yet.",
+    helps:"Pushing harder makes the freeze deeper. What helps is letting the stored stress out of your body first. Then starting feels possible again.",
+    product:{title:"When Everything Is Too Much", price:"$37", url:"https://stan.store/Backtobreath/p/sensory-overload-off-switch-",
+      blurb:"For the moments your system shuts down or overloads. Press play, close your eyes and let your body come back online."}
+  },
+  internaliser: {
+    felt:["Feeling overwhelmed by small tasks (getting my car inspected, making a dentist appointment, writing important dates in my planner) and feeling completely emotionally depleted.","Guilt at not doing enough and not doing it well enough","feel like I can't function like an adult should be able to","I don’t know how to live without that much stress"],
+    moment:"I made this audio for the moment the mask comes off and you realise how tired you really are.",
+    name:"The Internaliser", pick:"I keep going and act like I'm fine.", pct:33,
+    lead:"You keep going and act like you're fine. Nobody around you would guess what it takes to get through a normal day.",
+    body:"Masking uses a lot of energy. Your body carries the stress you don't show, and it builds up with nowhere to go. That's why rest doesn't seem to fill the tank.",
+    helps:"You don't need another way to cope. You need a way to let it out, somewhere you don't have to perform.",
+    product:{title:"Reset Your Burnt Out Nervous System", price:"$37", url:"https://stan.store/Backtobreath/p/reset-your-burnt-out-nervous-system",
+      blurb:"For the tired that rest doesn't fix. A guided breathwork reset to let out what you've been carrying."}
+  },
+  overfunctioner: {
+    felt:["Trying to do everything all the time for everyone","Not being able to give myself a break, a constant to do list","Being very short tempered with my kids, and being overwhelmed by every day tasks that have become unmanageable","I dont have any metime. Everybody wants something from me"],
+    moment:"I made this audio for the moment you finally lie down and your brain won't stop.",
+    name:"The Overfunctioner", pick:"I push harder and take on more.", pct:18,
+    lead:"When it gets too much, you push harder and take on more. Stopping feels harder than going.",
+    body:"Your nervous system is stuck on. It runs on adrenaline, so you keep busy to stay ahead of the crash. Then night comes and your brain won't switch off.",
+    helps:"Your body needs to learn it can come down. Gentle breathing helps it come off high alert, so rest can actually land.",
+    product:{title:"Stop the Night Spiral", price:"$27", url:"https://stan.store/Backtobreath/p/stop-the-night-spiral--deep-reset-audio",
+      blurb:"For when your body finally stops but your brain keeps going. Helps you come down so sleep can come."}
+  },
+  absorber: {
+    felt:["The weight of pretending everything is fine when it’s not","Feeling behind with everything, forgetting stuff and getting easily annoyed at my kids, they dont deserve that","The constant extreme tension in my body","Lack of patience, irritability, exhaustion"],
+    moment:"I made this audio for the moment you get home carrying everyone else's day.",
+    name:"The Absorber", pick:"I soak up everyone else's stress.", pct:8,
+    lead:"You soak up everyone else's stress. You feel the mood in a room before anyone says a word.",
+    body:"Your nervous system is always scanning other people. Their stress becomes yours, and your own needs come last. By the end of the day you're carrying far more than your share.",
+    helps:"You need a way to put down what isn't yours and come back to your own body.",
+    product:{title:"When Everything Is Too Much", price:"$37", url:"https://stan.store/Backtobreath/p/sensory-overload-off-switch-",
+      blurb:"For the moments it all piles up. Press play, close your eyes and let your body put some of it down."}
+  }
+};
+var ADHD = [["yes","Yes, diagnosed"],["think","I think so"],["no","No"],["unsure","Not sure"]];
+var RESEARCH = [
+  {key:"gender", multi:false, kicker:"About you", q:"How do you describe yourself?", opts:[["woman","Woman"],["man","Man"],["nonbinary","Non binary"],["other","Another way"],["skip","Prefer not to say"]]},
+  {key:"age", multi:false, kicker:"About you", q:"How old are you?", opts:[["under25","Under 25"],["25-34","25 to 34"],["35-44","35 to 44"],["45-54","45 to 54"],["55+","55 or over"]]},
+  {key:"peri", multi:false, kicker:"About you", q:"Do you think perimenopause could be playing a part?", cond:function(){return S.r.gender==="woman"&&["35-44","45-54","55+"].indexOf(S.r.age)>-1;}, opts:[["yes","Yes, I think so"],["maybe","Maybe, I'm not sure"],["no","No"],["after","I'm past menopause"]]},
+  {key:"tried", multi:true, kicker:"What you've tried", q:"What have you already tried to feel better?", hint:"Tap all that fit.", opts:[["meds","ADHD medication"],["therapy","Therapy or counselling"],["apps","Meditation apps"],["exercise","Exercise or yoga"],["breathwork","Breathwork"],["coaching","ADHD coaching"],["learning","Books, podcasts or courses"],["nothing","Nothing yet"]]},
+  {key:"stopped", multi:true, kicker:"What gets in the way", q:"What's made it hard to get support?", hint:"Tap all that fit.", opts:[["cost","Cost"],["time","No time or energy"],["notwork","I've tried things that didn't work"],["stick","It's hard to stick with things"],["unsure","I don't know what would help"],["myself","I feel like I should handle it myself"],["notyet","Nothing, I just haven't started"]]},
+  {key:"support", multi:true, max:3, kicker:"What would help", q:"What kind of support sounds best to you?", hint:"Tap up to 3.", opts:[["audio","Audios I can use on my own"],["live","Live group sessions online"],["community","A community of people who get it"],["course","A course I do at my own pace"],["oneone","1:1 support"],["inperson","In person workshops or retreats"]]},
+  {key:"found", multi:false, kicker:"Last tap", q:"Where did you find me?", opts:[["instagram","Instagram"],["facebook","Facebook"],["friend","A friend told me"],["google","Google"],["other","Somewhere else"]]}
+];
+var CARE_WORDS = /suicid|kill myself|end my life|ending my life|end it all|better off dead|easier if i (was|were) dead|want to die|wish i was dead|self harm|hurt myself|harm myself/i;
+
+var S = {step:0, answers:[], type:null, second:null, adhd:null, r:{gender:"",age:"",peri:"",tried:[],stopped:[],support:[],found:""}, heaviest:"", different:"", name:"", email:"", sent:null};
+var TOTAL = QUESTIONS.length + 5 + RESEARCH.length; // scale + type + second + adhd + research + words + details
+var app = document.getElementById("app");
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function score(){return S.answers.reduce(function(a,b){return a+(b||0);},0);}
+function level(sc){
+  if(sc>=29) return {key:"past", name:"Past empty", bars:10, text:"You're running on fumes. Your body has been in survival mode for a long time. Please be gentle with yourself."};
+  if(sc>=16) return {key:"empty", name:"Running on empty", bars:3, text:"You're getting through on not much at all. Things that used to feel easy now take everything you've got."};
+  return {key:"low", name:"Running low", bars:6, text:"Your tank is getting low. This is a great time to look after it, before it gets harder."};
+}
+function progress(){
+  var n = S.step===0 ? 0 : Math.min(S.step, TOTAL);
+  document.getElementById("bar").style.width = (n/TOTAL*100)+"%";
+  document.getElementById("count").textContent = (S.step>0 && S.step<=TOTAL) ? (n+" of "+TOTAL) : "";
+}
+function hidden(n){var q=QUESTIONS.length,i=n-q-4,R=RESEARCH[i];return !!(R&&R.cond&&!R.cond());}
+function go(n){var dir=n<S.step?-1:1;while(hidden(n))n+=dir;S.step=n;render();window.scrollTo(0,0);var h=app.querySelector("h1,h2");if(h){h.setAttribute("tabindex","-1");h.focus({preventScroll:true});}}
+function backBtn(){return S.step>1?'<button class="back" data-back>‹ Back</button>':"";}
+
+function render(){
+  progress();
+  var q = QUESTIONS.length, s = S.step, h = "";
+  if(s===0){
+    h = '<div class="kicker">Free · about 4 minutes</div>'+
+      '<h1>The Nervous System Audit</h1>'+
+      '<p class="lead">For ADHD folks who look calm on the outside and feel overwhelmed on the inside.</p>'+
+      '<p>Answer about 20 quick questions, most are just one tap, and you\'ll find out:</p>'+
+      '<ul class="clean"><li>your stress type</li><li>how full your tank is</li><li>what your nervous system needs right now</li></ul>'+
+      '<p>Plus a free meditation and an exercise for your type, sent to your inbox.</p>'+
+      '<p style="margin-top:22px"><button class="btn primary block" data-next>Start the audit</button></p>'+
+      '<p class="small muted">Over 2,000 people have taken this audit.</p>';
+  } else if(s<=q){
+    var item = QUESTIONS[s-1], cur = S.answers[s-1];
+    h = backBtn()+'<div class="kicker">How often is this true lately?</div><h2>'+esc(item.t)+'</h2><div class="answers">'+
+      SCALE.map(function(o){return '<button data-scale="'+o[1]+'" aria-pressed="'+(cur===o[1])+'">'+o[0]+'</button>';}).join("")+'</div>';
+  } else if(s===q+1){
+    h = backBtn()+'<div class="kicker">Your stress type</div><h2>When it all gets too much, what do you do most?</h2><div class="answers">'+
+      Object.keys(TYPES).map(function(k){return '<button data-type="'+k+'" aria-pressed="'+(S.type===k)+'">'+esc(TYPES[k].pick)+'</button>';}).join("")+'</div>';
+  } else if(s===q+2){
+    h = backBtn()+'<div class="kicker">Your stress type</div><h2>Anything else you do sometimes?</h2><p class="muted">Pick one more if it fits, or skip.</p><div class="answers">'+
+      Object.keys(TYPES).filter(function(k){return k!==S.type;}).map(function(k){return '<button data-second="'+k+'" aria-pressed="'+(S.second===k)+'">'+esc(TYPES[k].pick)+'</button>';}).join("")+
+      '<button data-second="" aria-pressed="false"><b>Skip</b><small>That first one is me</small></button></div>';
+  } else if(s===q+3){
+    h = backBtn()+'<div class="kicker">About you</div><h2>Do you have ADHD?</h2><div class="answers">'+
+      ADHD.map(function(o){return '<button data-adhd="'+o[0]+'" aria-pressed="'+(S.adhd===o[0])+'">'+o[1]+'</button>';}).join("")+'</div>';
+  } else if(s>=q+4 && s<q+4+RESEARCH.length){
+    var R = RESEARCH[s-q-4], val = S.r[R.key];
+    h = backBtn()+'<div class="kicker">'+esc(R.kicker)+'</div><h2>'+esc(R.q)+'</h2>'+(R.hint?'<p class="muted">'+esc(R.hint)+'</p>':'')+'<div class="answers">'+
+      R.opts.map(function(o){var on=R.multi?val.indexOf(o[0])>-1:val===o[0];return '<button data-r="'+o[0]+'" aria-pressed="'+on+'">'+esc(o[1])+'</button>';}).join("")+'</div>'+
+      (R.multi?'<p style="margin-top:18px"><button class="btn primary block" data-rnext>'+(val.length?'Next':'Skip')+'</button></p>':'');
+  } else if(s===q+4+RESEARCH.length){
+    h = backBtn()+'<div class="kicker">In your words</div><h2>What feels heaviest for you right now?</h2>'+
+      '<p class="muted">Both optional. I read every one. I may share a few words without your name, so other people feel less alone.</p>'+
+      '<label for="heavy" class="sr">What feels heaviest</label><textarea id="heavy" rows="3" maxlength="600">'+esc(S.heaviest)+'</textarea>'+
+      '<label for="diff">If things felt lighter, what would be different in your week?</label><textarea id="diff" rows="3" maxlength="600">'+esc(S.different)+'</textarea>'+
+      '<p style="margin-top:18px"><button class="btn primary block" data-heavy>Next</button></p>';
+  } else if(s===q+5+RESEARCH.length){
+    h = backBtn()+'<div class="kicker">Last step</div><h2>Where should I send your results?</h2>'+
+      '<p>You\'ll see your results straight away. I\'ll also email you a copy, plus a free meditation and an exercise for your type.</p>'+
+      '<form id="details" novalidate>'+
+      '<label for="fname">First name</label><input type="text" id="fname" autocomplete="given-name" value="'+esc(S.name)+'">'+
+      '<label for="email">Email</label><input type="email" id="email" autocomplete="email" inputmode="email" value="'+esc(S.email)+'">'+
+      '<label class="check"><input type="checkbox" id="ok"> <span>Yes, email me my results and a few emails to help with my type. I can unsubscribe any time.</span></label>'+
+      '<button class="btn primary block" type="submit" id="go">Show my results</button><p class="err" id="err" role="alert"></p>'+
+      '<p class="small muted">Your name and email stay private. I never share them.</p></form>';
+  } else {
+    h = results();
+  }
+  app.innerHTML = h;
+}
+
+var REFLECT = ["wake up already tired","find rest doesn't fill your tank back up","find small tasks take everything you've got",
+  "feel tight, braced or tense","can't switch off, even when you finally stop","reach for your phone, snacks or zoning out to get through",
+  "check out from people or things you care about","feel flat, numb or far away from yourself","snap at little things, then feel awful after",
+  "feel like you're one more thing away from losing it"];
+function reflections(){
+  var list = S.answers.map(function(v,i){return {v:v||0,i:i};}).filter(function(x){return x.v>=3;})
+    .sort(function(a,b){return b.v-a.v||a.i-b.i;}).slice(0,3);
+  return list.map(function(x){return "You said you "+(x.v===4?"almost always":"often")+" "+REFLECT[x.i]+".";});
+}
+function whyDifferent(){
+  var t=S.r.tried, st=S.r.stopped, out=[];
+  if(t.indexOf("apps")>-1) out.push("You've tried meditation apps. With ADHD, being told to empty your mind can feel impossible. In my breathwork, your mind is allowed to wander.");
+  if(t.indexOf("meds")>-1||t.indexOf("therapy")>-1) out.push("Medication and therapy can help a lot. So many people I work with have both and still feel like this by 5pm. Breathwork works with your body, where the stress is stored.");
+  if(st.indexOf("notwork")>-1&&out.length<2) out.push("If other things haven't worked, they may have asked your brain to do more. This works through your body instead.");
+  if((st.indexOf("stick")>-1||st.indexOf("time")>-1)&&out.length<2) out.push("There's no routine to keep up and nothing to remember. You press play when you need it.");
+  if(st.indexOf("myself")>-1&&out.length<2) out.push("You don't have to handle this on your own. Needing support isn't failing.");
+  if(st.indexOf("unsure")>-1&&out.length<2) out.push("Not knowing what will help is normal. Starting with your type is the easiest first step.");
+  return out.slice(0,2);
+}
+function results(){
+  var t = TYPES[S.type] || TYPES.avoider, sec = S.second ? TYPES[S.second] : null;
+  var sc = score(), lv = level(sc), first = (S.name||"").split(" ")[0];
+  var care = CARE_WORDS.test(S.heaviest+' '+S.different), short = t.name.replace("The ","");
+  var careBox = '<div class="card care"><h3>If you\'re not okay right now</h3><p>Please talk to someone today. In Australia, call Lifeline on <b>13 11 14</b> or text <b>0477 13 11 14</b>, any time, day or night. Outside Australia, find a free line near you at <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a>. If you\'re in danger, call your local emergency number.</p></div>';
+  var on = lv.key==="low"?6:lv.key==="empty"?3:1, bars="";
+  for(var i=0;i<10;i++){bars += '<span class="'+(i<on?"on":"")+'"></span>';}
+  var refl = reflections(), h = "";
+  if(care) h += careBox;
+  h += '<div class="kicker">'+(first?esc(first)+", you\'re":"You\'re")+'</div><h1>'+esc(t.name)+'</h1><p class="lead">'+esc(t.lead)+'</p>';
+  h += '<div class="card deep"><div class="kicker">What other '+esc(short.toLowerCase())+'s told me</div><p style="margin:0 0 14px;color:var(--lilac)">I asked people who took this audit what feels heaviest right now. These are their words, exactly as they wrote them.</p>'+
+    t.felt.map(function(l){return '<p style="font-family:var(--display);font-size:20px;line-height:1.3;margin:0 0 12px">“'+esc(l)+'”</p>';}).join("")+
+    '<p style="margin:16px 0 0;color:var(--lilac)">If any of this sounds like you, you\'re not the only one. None of this means you\'re failing. Your nervous system is doing exactly what it learned to do to get you through.</p></div>';
+  if(refl.length||S.heaviest){
+    h += '<div class="card"><h3>What your answers tell me</h3>'+refl.map(function(r){return '<p style="margin:0 0 8px">→ '+esc(r)+'</p>';}).join("");
+    if(S.heaviest&&!care) h += '<p style="margin:14px 0 0">And you told me what feels heaviest right now:</p><p style="font-family:var(--display);font-size:19px;color:var(--plum);margin:6px 0 0">“'+esc(S.heaviest)+'”</p><p style="margin:10px 0 0">I hear you. That is a lot to carry.</p>';
+    h += '</div>';
+  }
+  h += '<div class="card deep"><div class="kicker">Your tank</div><h2 style="margin:0">'+lv.name+'</h2>'+
+    '<div class="tank" aria-hidden="true">'+bars+'</div><div class="tanklbl"><span>empty</span><span>full</span></div>'+
+    '<p style="margin:14px 0 0">'+lv.text+'</p></div>';
+  h += '<div class="card"><h3>What\'s really going on</h3><p>'+esc(t.body)+'</p>';
+  if(sec) h += '<p>You also lean towards <b>'+esc(sec.name.replace("The ",""))+'</b>. '+esc(sec.lead.split(". ")[0])+'.</p>';
+  if(S.adhd==="yes"||S.adhd==="think") h += '<p>With ADHD, your nervous system works harder all day just to keep up. That\'s why strategies on their own don\'t stick. It was never a doing problem. It\'s a capacity problem.</p>';
+  h += '<h3 style="margin-top:18px">What helps</h3><p style="margin:0">'+esc(t.helps)+'</p></div>';
+  var why = whyDifferent();
+  if(why.length) h += '<div class="card"><h3>Why this could be different for you</h3>'+why.map(function(w){return '<p>→ '+esc(w)+'</p>';}).join("")+'</div>';
+  h += '<div class="card lilac"><div class="row"><div class="stat">'+t.pct+'%</div><p style="margin:0">of the 2,000+ people who\'ve taken this audit are '+esc(short)+'s. And 88% said rest doesn\'t fill their tank back up. You\'re not the only one.</p></div></div>';
+  h += '<div class="card" style="border:2px solid var(--plum)"><div class="kicker">Made for '+esc(short.toLowerCase())+'s</div><h2 style="margin-bottom:10px">'+esc(t.product.title)+'</h2>'+
+    '<p><b>'+esc(t.moment)+'</b></p><p>'+esc(t.product.blurb)+' No steps to remember, no getting it right. Just my voice and your breath.</p>'+
+    '<p><a class="btn primary block" href="'+t.product.url+'" target="_blank" rel="noopener">Get '+esc(t.product.title)+' · <span class="price">'+t.product.price+' USD</span></a></p>'+
+    '<p class="small muted" style="margin:0">Yours to keep. Or get <a href="'+AUDIT.BUNDLE_URL+'" target="_blank" rel="noopener">all five audios for $97</a>.</p></div>';
+  if(S.sent==="ok") h += '<div class="card"><h3>Check your inbox 💛</h3><p style="margin:0">I\'ve sent your results, a free meditation and an exercise made for '+esc(short.toLowerCase())+'s. If you can\'t see it, check your promotions or spam folder.</p></div>';
+  else if(S.sent==="fail") h += '<div class="card"><h3>Your email didn\'t send</h3><p style="margin:0">Your results are all here, but I couldn\'t send the email. Screenshot this page so you have it.</p></div>';
+  h += '<div class="card"><div class="kicker">Want support every week?</div><h3>ADHDecompress</h3><p>A 2 week intro to my ADHD membership. Live breathwork with me twice a week, and a community of people who get it.</p>'+
+    '<p style="margin:0"><a class="btn block" href="'+AUDIT.DECOMPRESS_URL+'">Find out about ADHDecompress</a></p></div>';
+  h += '<div class="card signoff"><img src="'+AUDIT.PHOTO+'" alt="Lucine, smiling, sitting on a cushion in her breathwork studio" width="208" height="260">'+
+    '<div><div class="kicker">A note from me</div><h3 style="font-size:24px">Hey'+(first?' '+esc(first):'')+', I\'m Lucine</h3>'+
+    '<p>I was diagnosed with ADHD at 37, and I was still exhausted, overwhelmed and snapping at the people I love. Then I found breathwork, and it changed my life. For the first time, my body felt safe.</p>'+
+    '<p>Thank you for being so honest with me today. I read every one of these myself.</p>'+
+    '<p>If something here hit home, just reply to my email and tell me. I\'d really love to hear from you.</p>'+
+    '<p class="sign">Lucine 💛</p></div></div>';
+  if(!care) h += careBox;
+  return h;
+}
+
+function send(){
+  var t = S.type, sc = score(), lv = level(sc);
+  var payload = {list:"audit", name:S.name, email:S.email, audit:{
+    type:t, second:S.second||"", score:sc, level:lv.name, adhd:S.adhd||"", heaviest:S.heaviest, different:S.different,
+    gender:S.r.gender, age:S.r.age, peri:S.r.peri, tried:S.r.tried, stopped:S.r.stopped, support:S.r.support, found:S.r.found,
+    answers:S.answers, care:CARE_WORDS.test(S.heaviest+' '+S.different)}};
+  var done=false;
+  return Promise.race([
+    fetch(AUDIT.ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(r){done=true;return r.ok?"ok":"fail";}),
+    new Promise(function(res){setTimeout(function(){res(done?"ok":"fail");},8000);})
+  ]).catch(function(){return "fail";});
+}
+
+app.addEventListener("click",function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  var q = QUESTIONS.length;
+  if(b.hasAttribute("data-back")){go(S.step-1);return;}
+  if(b.hasAttribute("data-next")){go(1);return;}
+  if(b.hasAttribute("data-scale")){S.answers[S.step-1]=+b.getAttribute("data-scale");go(S.step+1);return;}
+  if(b.hasAttribute("data-type")){S.type=b.getAttribute("data-type");if(S.second===S.type)S.second=null;go(S.step+1);return;}
+  if(b.hasAttribute("data-second")){S.second=b.getAttribute("data-second")||null;go(S.step+1);return;}
+  if(b.hasAttribute("data-adhd")){S.adhd=b.getAttribute("data-adhd");go(S.step+1);return;}
+  if(b.hasAttribute("data-heavy")){S.heaviest=document.getElementById("heavy").value.trim();S.different=document.getElementById("diff").value.trim();go(S.step+1);return;}
+  if(b.hasAttribute("data-r")){
+    var R=RESEARCH[S.step-q-4], v=b.getAttribute("data-r");
+    if(!R.multi){S.r[R.key]=v;go(S.step+1);return;}
+    var list=S.r[R.key], i=list.indexOf(v);
+    if(i>-1) list.splice(i,1);
+    else {
+      if(v==="nothing"||v==="notyet") list.length=0; else {var x=list.indexOf("nothing");if(x>-1)list.splice(x,1);x=list.indexOf("notyet");if(x>-1)list.splice(x,1);}
+      if(R.max && list.length>=R.max) list.shift();
+      list.push(v);
+    }
+    render();return;
+  }
+  if(b.hasAttribute("data-rnext")){go(S.step+1);return;}
+});
+app.addEventListener("submit",function(e){
+  e.preventDefault();
+  var name=document.getElementById("fname").value.trim(), email=document.getElementById("email").value.trim(),
+      ok=document.getElementById("ok").checked, err=document.getElementById("err");
+  if(!name){err.textContent="Add your first name.";return;}
+  if(!/^\S+@\S+\.\S+$/.test(email)){err.textContent="Check your email address.";return;}
+  if(!ok){err.textContent="Tick the box so I can send your results.";return;}
+  S.name=name;S.email=email;
+  var btn=document.getElementById("go");btn.disabled=true;btn.textContent="Getting your results…";
+  send().then(function(r){S.sent=r;go(TOTAL+1);});
+});
+render();
+})();
+</script>
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}</style>
+</body>
+</html>

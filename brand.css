@@ -1,0 +1,147 @@
+/* =====================================================
+   BACK TO BREATH: BRAND 2026 (cream and lilac)
+   Loaded last on every page, so it wins over older styles.
+   Cream ground, lilac second ground, ink text, plum key words,
+   deep plum for statement sections, one coral action.
+   Bricolage Grotesque headings, DM Sans body.
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+
+:root {
+  --cream: #F7F1E6;
+  --cream-deep: #EDE3D1;
+  --lilac: #D9CFF0;
+  --ink: #2A1A33;
+  --ink-soft: #5A4A63;
+  --plum: #6B4C9A;
+  --deep: #3B1F4A;
+  --coral: #FF8A5B;
+
+  /* Older names, pointed at the new palette */
+  --paper: #F7F1E6;
+  --warm: #EDE3D1;
+  --grey: #5A4A63;
+  --purple: #6B4C9A;
+  --purple-dark: #3B1F4A;
+  --purple-light: #D9CFF0;
+  --purple-pale: #ECE6F7;
+  --cream-dark: #D8CBB5;
+  --cream-light: #F7F1E6;
+  --cream-pale: #F7F1E6;
+  --rose: #6B4C9A;
+  --rose-dark: #3B1F4A;
+  --terra: #FF8A5B;
+  --terra-dark: #6B4C9A;
+  --amber: #FF8A5B;
+  --amber-dark: #E9744A;
+  --marigold: #D9CFF0;
+  --olive: #6B4C9A;
+  --black: #2A1A33;
+  --off-white: #F7F1E6;
+  --white: #FFFCF7;
+  --text: #2A1A33;
+  --text-muted: #5A4A63;
+  --text-light: #5A4A63;
+  --border: rgba(42,26,51,0.14);
+  --border-dark: rgba(42,26,51,0.28);
+
+  --font-heading: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --body: var(--font-body);
+  --display: var(--font-display);
+}
+
+body { background: var(--cream); color: var(--ink); font-family: var(--font-body); }
+
+/* Headings: bold Bricolage in ink, key words in plum */
+h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--ink); font-weight: 700; letter-spacing: -0.02em; font-style: normal; font-variation-settings: normal; }
+h1 { font-weight: 800; }
+h1 em, h2 em, h3 em { font-style: normal; color: var(--plum); font-weight: inherit; }
+
+/* Nav */
+.nav { background: rgba(247,241,230,0.97); }
+.nav.scrolled { box-shadow: 0 4px 30px rgba(42,26,51,0.08); }
+.nav__cta, .footer__nav--cta { background: var(--deep) !important; color: var(--cream) !important; border-radius: 999px !important; text-transform: none !important; letter-spacing: 0 !important; font-weight: 600 !important; }
+.nav__cta:hover, .footer__nav--cta:hover { background: var(--plum) !important; }
+
+/* Buttons: pill shape, sentence case, coral is the one main action */
+.btn { border-radius: 999px; text-transform: none; letter-spacing: 0; font-size: 0.98rem; font-weight: 600; font-family: var(--font-body); }
+.btn--primary { background: var(--coral); color: var(--ink); }
+.btn--primary:hover { background: var(--deep); color: var(--cream); }
+.btn--cream { background: var(--coral); color: var(--ink); }
+.btn--cream:hover { background: var(--cream); color: var(--ink); }
+.btn--outline { color: var(--ink); border-color: var(--ink); }
+.btn--outline:hover { background: var(--ink); color: var(--cream); }
+.btn--outline-white { color: var(--cream) !important; border-color: rgba(247,241,230,0.7) !important; }
+.btn--outline-white:hover { background: rgba(247,241,230,0.14) !important; }
+.btn--white { background: var(--cream); color: var(--deep); }
+.btn--white:hover { background: var(--lilac); }
+.btn--text { text-transform: none; letter-spacing: 0; color: var(--plum); }
+
+/* Small labels: sentence case, plum */
+.ed-kicker, .hero__eyebrow { text-transform: none; letter-spacing: 0.01em; font-weight: 600; color: var(--plum); font-size: 0.95rem; }
+
+/* Sections */
+.ed-hero { background: var(--cream); }
+.ed-hero::before { border-color: rgba(107,76,154,0.30); }
+.ed-hero::after { border-color: rgba(255,138,91,0.45); }
+.ed-hero figure img { box-shadow: 0 30px 60px -30px rgba(59,31,74,0.45); }
+.ed-section--warm { background: var(--cream-deep); }
+.ed-info { background: var(--lilac); }
+.ed-section--plum, .voice { background: var(--deep); color: var(--cream); }
+.ed-section--plum h2, .ed-section--plum h3, .voice h2, .voice h3 { color: var(--cream); }
+.ed-section--plum h2 em, .voice h2 em { color: var(--lilac); }
+.ed-section--plum .ed-kicker, .voice .ed-kicker { color: var(--lilac); }
+.voice::before { color: rgba(217,207,240,0.18); }
+.voice__lead, .voice__note { font-family: var(--font-display); font-style: normal; font-weight: 600; color: var(--cream); letter-spacing: -0.02em; }
+.voice__who, .voice__row cite { color: rgba(247,241,230,0.8); }
+.voice__row { border-top-color: rgba(247,241,230,0.22); }
+.ed-card .n, .ed-step .when { color: var(--plum); font-family: var(--font-display); font-weight: 700; }
+.ed-results .ic { color: var(--coral); }
+.quote-grid .tag { background: var(--lilac); color: var(--deep); }
+.quote-grid blockquote { background: #FFFCF7; }
+.quote-grid blockquote:nth-child(3n+2) { background: var(--cream-deep); }
+.quote-grid blockquote:nth-child(3n) { background: var(--lilac); }
+.marquee { background: var(--lilac); color: var(--deep); }
+.band figure:nth-child(2) { outline-color: var(--coral); }
+.offer-list li { border-top-color: rgba(247,241,230,0.25); color: var(--cream); }
+
+/* Home page hero: photo with a deep plum wash, cream words */
+.hero__bg, .hero__bg .photo-placeholder { background: var(--deep); }
+.hero__overlay { background: linear-gradient(to top, rgba(59,31,74,0.92) 0%, rgba(59,31,74,0.6) 50%, rgba(59,31,74,0.25) 100%); }
+.hero__eyebrow { color: var(--lilac); }
+.hero__eyebrow::before { background: var(--lilac); }
+.hero h1, .hero h1 em { color: var(--cream); font-style: normal; text-shadow: none; }
+.hero h1 em { color: var(--lilac); }
+.hero__sub { color: rgba(247,241,230,0.94); }
+@media (min-width: 900px) {
+  .hero__overlay { background: linear-gradient(to left, rgba(59,31,74,0.9) 0%, rgba(59,31,74,0.72) 45%, rgba(59,31,74,0.1) 80%), linear-gradient(to top, rgba(59,31,74,0.6) 0%, rgba(59,31,74,0) 50%); }
+}
+
+/* Newsletter and footer */
+.newsletter { background: var(--deep); }
+.newsletter h2, .newsletter h3 { color: var(--cream); }
+.footer { background: var(--cream-deep); border-top: 0; }
+
+/* Forms */
+.wl input[type=text], .wl input[type=email], .newsletter__input { border-radius: 12px; }
+.wl input[type=text]:focus, .wl input[type=email]:focus { border-color: var(--plum); outline: 2px solid rgba(107,76,154,0.25); }
+
+/* Focus and motion button */
+:focus-visible { outline-color: var(--plum); }
+.voice :focus-visible, .ed-section--plum :focus-visible, .hero :focus-visible, .newsletter :focus-visible { outline-color: var(--coral); }
+.skip { background: var(--deep); }
+.motion-btn { background: var(--cream); color: var(--deep); border-color: var(--deep); }
+.motion-btn:hover { background: var(--deep); color: var(--cream); }
+
+/* Dark gradient tiles from older versions become flat deep plum */
+.brand-deep { background: var(--deep) !important; }
+
+/* Fine tuning after first look */
+h1 em, h2 em, h3 em, .hero h1 em { font-weight: inherit !important; font-style: normal !important; }
+.intro-strip { background: var(--deep) !important; }
+.intro-strip__quote { color: var(--cream); font-style: normal; }
+.label { text-transform: none; letter-spacing: 0.01em; font-weight: 600; color: var(--plum); font-size: 0.95rem; }
+.label::before { background: var(--plum); }
+.hero h1 { font-weight: 800 !important; letter-spacing: -0.025em; }
