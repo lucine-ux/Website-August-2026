@@ -176,3 +176,11 @@ cite, figcaption, .voice__who, .voice__row cite, .quote-grid cite, .testimonial 
 /* Sentence case everywhere: no shouty all caps labels or nav */
 body *:not(.sr-only) { text-transform: none !important; }
 .nav a, .nav__links a { letter-spacing: 0 !important; }
+
+/* Association logos: bigger and full strength, they build trust */
+.footer__logos-inline { gap: 22px; padding-left: 22px; }
+.footer__logos-inline img { height: 60px !important; opacity: 1 !important; border-radius: 6px; }
+@media (max-width: 700px) {
+  .footer__logos-inline { border-left: 0; padding-left: 0; margin: 8px 0 12px; }
+  .footer__logos-inline img { height: 56px !important; }
+}
