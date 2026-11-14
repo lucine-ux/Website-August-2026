@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <title>Shop | Breathwork Tools &amp; Nervous System Programs | Back to Breath</title>
+  <meta name="description" content="Breathwork tools and nervous system regulation programs for ADHD brains running on empty. Deep Reset Audio Series, ADHDecompress, and The Rewire membership. By Lucine Setian." />
+  <link rel="canonical" href="https://www.backtobreath.net.au/shop" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.backtobreath.net.au/shop" />
+  <meta property="og:title" content="Shop | Breathwork Tools &amp; Nervous System Programs | Back to Breath" />
+  <meta property="og:description" content="Body first breathwork tools designed for ADHD brains running on empty." />
+  <meta property="og:image" content="https://www.backtobreath.net.au/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="shop.css" />
+  <style>
+    .audio-series-header {
+      grid-column: 1 / -1;
+      padding: 52px 0 8px;
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .audio-series-header h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight:500;
+      color: var(--black);
+      letter-spacing: -0.02em;
+    }
+    .audio-series-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 420px;
+      line-height: 1.7;
+    }
+    .audio-series-header__left { max-width: 600px; }
+    .audio-series-header__right {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--purple-pale);
+      padding: 8px 16px;
+      border-radius: 40px;
+      white-space: nowrap;
+    }
+    .audio-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size:0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.4;
+    }
+    .audio-placeholder--1 { background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--2 { background: linear-gradient(135deg,#0d0d1a,#1a0a2e,#2d1b47); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--3 { background: linear-gradient(135deg,#0a1628,#1e2d5a,#243b73); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--4 { background: linear-gradient(135deg,#0d1b2a,#1b2838,#234062); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--5 { background: linear-gradient(135deg,#1a0a0a,#2d1515,#471b1b); color:rgba(255,255,255,0.7); }
+    .audio-placeholder--bundle { background: linear-gradient(135deg,#0d0d1a,#1a1535,#2a1f52); color:rgba(255,255,255,0.7); }
+    .product-card-full--bundle {
+      background: linear-gradient(135deg, var(--black) 0%, #1a1535 100%);
+      border-color: rgba(168,173,199,0.25);
+    }
+    .product-card-full--bundle .product-card-full__category { color: var(--amber); }
+    .product-card-full--bundle h3 { color: var(--white); }
+    .product-card-full--bundle p { color: rgba(255,255,255,0.65); }
+    .product-card-full--bundle .product-card-full__price { color: var(--amber); }
+    .product-card-full--bundle .product-card-full__price span { color:rgba(255,255,255,0.72); }
+    .bundle-includes {
+      display:flex; flex-direction:column; gap:6px;
+      margin:0 0 20px; padding:16px;
+      background:rgba(255,255,255,0.06);
+      border-radius:2px; border-left:2px solid var(--amber);
+    }
+    .bundle-includes li {
+      font-size:0.82rem; color:rgba(255,255,255,0.7);
+      padding-left:12px; position:relative;
+    }
+    .bundle-includes li::before { content:'→'; position:absolute; left:0; color:var(--amber); font-size:0.75rem; }
+    .bundle-saving-badge {
+      display:inline-block; background:var(--amber); color:var(--black);
+      font-family:var(--font-heading); font-size:0.8rem; font-weight:500;
+      letter-spacing:0.08em; text-transform:uppercase;
+      padding:4px 12px; border-radius:40px; margin-bottom:16px;
+    }
+    .product-card-full--premium { background:var(--cream-pale); border:1px solid var(--cream-light); }
+    .product-card-full--premium .product-card-full__category { color:var(--terra); }
+    .session-what-you-get { display:flex; flex-direction:column; gap:10px; margin:4px 0 20px; }
+    .session-what-you-get li {
+      font-size:0.88rem; color:var(--text-muted);
+      display:flex; gap:10px; align-items:flex-start; line-height:1.5;
+    }
+    .session-what-you-get li::before { content:'→'; color:var(--terra); flex-shrink:0; margin-top:1px; }
+    .session-disclaimer {
+      font-size:0.78rem; color:var(--text-light);
+      line-height:1.6; padding-top:16px;
+      border-top:1px solid var(--border); margin-top:8px;
+    }
+    .shop-section-label {
+      grid-column:1/-1; display:flex; align-items:center; gap:16px;
+      margin-bottom:-12px; margin-top:24px;
+    }
+    .shop-section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+    .shop-section-label span {
+      font-family:var(--font-heading); font-size:0.8rem; font-weight:700;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--text-light); white-space:nowrap;
+    }
+    @media (max-width:900px) {
+      .audio-series-header { flex-direction:column; align-items:flex-start; gap:12px; }
+    }
+
+    /* ---- AUDIO CARDS — compact uniform tiles ---- */
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) {
+      flex-direction: column;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) .product-card-full__image {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) .product-card-full__image img {
+      object-fit: cover;
+      object-position: center top;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) .product-card-full__body {
+      padding: 20px 22px;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) h3 {
+      font-size: 0.97rem;
+      margin-bottom: 8px;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) p {
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+    .product-card-full[data-category="audio"]:not(.product-card-full--featured) .product-card-full__price {
+      font-size: 1rem;
+    }
+
+    /* Audio grid — 3 columns for individual tiles */
+    .audio-tiles-grid {
+      display: contents;
+    }
+
+    /* Override shop-grid to be 3 col when filtering to audio tiles */
+    @media (min-width: 901px) {
+      #shopGrid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      /* Featured / full-width cards still span all 3 */
+      .product-card-full--featured,
+      .shop-membership-cta,
+      .audio-series-header,
+      #sectionDivider,
+      #audioHeader {
+        grid-column: 1 / -1;
+      }
+      /* Session card spans 2 cols to feel premium but not full width */
+      .product-card-full--premium {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* ── AUDIO TILES — standalone clickable tiles ── */
+    .audio-tile {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .audio-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    }
+    .audio-tile__img {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #1a1a2e;
+    }
+    .audio-tile__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .audio-tile:hover .audio-tile__img img { transform: scale(1.04); }
+    .audio-tile__body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .audio-tile__body h4 {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+      margin: 0;
+    }
+    .audio-tile__price {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight:500;
+      color: var(--purple);
+      margin-top: auto;
+    }
+    @media (max-width: 900px) {
+      [style*="repeat(5,1fr)"] { grid-template-columns: repeat(3,1fr) !important; }
+    }
+    @media (max-width: 600px) {
+      [style*="repeat(5,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+    }
+
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="index.html" class="nav__logo"><img src="images/logo.png" alt="Back to Breath" /></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="adhdecompress.html" class="nav__accent">ADHDecompress</a></li>
+      <li><a href="retreat.html">Retreat</a></li>
+      <li><a href="shop.html" class="active" aria-current="page">Shop</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="rewire.html" class="nav__cta">Join The Rewire</a></li>
+    </ul>
+    <div class="nav__toggle" id="navToggle" aria-label="Open menu" role="button" tabindex="0"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="nav__mobile" id="navMobile">
+    <span class="nav__mobile__close" id="navClose" aria-label="Close menu" role="button" tabindex="0">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="adhdecompress.html" style="color:var(--terra-dark);">ADHDecompress</a>
+    <a href="retreat.html">Retreat waitlist</a>
+    <a href="shop.html">Shop</a>
+    <a href="blog.html">Writing</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" rel="noopener">Free nervous system audit</a>
+    <a href="rewire.html" style="color:var(--plum);font-weight:600;">Join The Rewire</a>
+  </div>
+<main id="main" tabindex="-1">
+
+  <section style="position:relative;height:52vh;min-height:380px;overflow:hidden;display:flex;align-items:flex-end;">
+    <div style="position:absolute;inset:0;">
+      <img src="images/community.jpg" alt="Back to Breath breathwork session" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;" />
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,0.85) 0%,rgba(13,13,13,0.55) 60%,transparent 100%);"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;padding-bottom:56px;animation:fadeUp 1.1s var(--ease) both;">
+      <span class="hero__eyebrow">Tools &amp; Sessions</span>
+      <h1 style="font-size:clamp(2.4rem,5vw,4rem);font-weight:500;color:var(--white);letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;max-width:620px;">Start where you are.<br><em style="font-weight:300;color:var(--cream-light);">No experience needed.</em></h1>
+      <p style="color:rgba(255,255,255,0.72);font-size:0.95rem;max-width:480px;line-height:1.8;font-weight:300;">Guided practices, nervous system tools, and live breathwork. All designed to help your brain and body rewire out of survival mode ... at a pace that actually works for you.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL STRIP -->
+  <div style="background:var(--cream-pale);border-bottom:1px solid var(--cream-light);padding:24px 0;overflow:hidden;">
+    <div class="container" style="display:flex;gap:48px;align-items:stretch;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;padding-right:48px;border-right:1px solid var(--border);">
+        <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:8px;">"It felt like a complete reset for my nervous system. I left feeling calm, grounded, and finally clear."</p>
+        <span style="font-family:var(--font-heading);font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);">Kerri Lyne</span>
+      </div>
+      <div style="flex:1;min-width:260px;padding-right:48px;border-right:1px solid var(--border);">
+        <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:8px;">"I thought it would be a simple breathing workshop. It was surprisingly deeper. Vivid and extraordinary."</p>
+        <span style="font-family:var(--font-heading);font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);">Robin McCarthy</span>
+      </div>
+      <div style="flex:1;min-width:260px;">
+        <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;font-style:italic;margin-bottom:8px;">"I left the session feeling more grounded, open, and connected than I have in a long time."</p>
+        <span style="font-family:var(--font-heading);font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);">Emma Kidman</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop-filters">
+    <div class="shop-filters__inner">
+      <button class="filter-btn active" data-filter="all">All products</button>
+      <button class="filter-btn" data-filter="live">Live and in person</button>
+      <button class="filter-btn" data-filter="audio">Deep Reset Audios</button>
+    </div>
+  </div>
+
+  <section class="shop-section section--tight">
+    <div class="container">
+      <div class="shop-grid" id="shopGrid">
+
+        <!-- ADHDECOMPRESS -->
+        <article class="product-card-full product-card-full--featured" data-category="live">
+          <div class="product-card-full__image">
+            <img src="images/lucine-incense.jpg" alt="Lucine Setian, ADHDecompress" style="object-position:center top;" />
+            <span class="product-card-full__badge" style="background:var(--amber);color:var(--black);">Always open &middot; Live online</span>
+          </div>
+          <div class="product-card-full__body">
+            <p class="product-card-full__category">Live program</p>
+            <h3>ADHDecompress</h3>
+            <p>2 weeks of live breathwork, so your ADHD body can finally decompress, even when your brain is loud. Two live sessions a week, 3 short starter lessons, a community space and replays of every session. Start any time.</p>
+            <div class="product-card-full__footer">
+              <div class="product-card-full__price" style="font-size:1.05rem;">2 weeks &middot; live online</div>
+              <a href="adhdecompress.html" class="btn btn--primary">See ADHDecompress</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- REWIRE CTA -->
+        <div class="shop-membership-cta" id="membershipCta" style="background:linear-gradient(135deg,var(--purple-dark) 0%,#2a1f52 100%);">
+          <div>
+            <span style="font-family:var(--font-heading);font-size:0.8rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:10px;">Monthly Membership</span>
+            <h3>Ready to actually rewire, not just cope?</h3>
+            <p>The Rewire is an ongoing live breathwork membership. Two live sessions every week, monthly workshops, a workshop library, and a community of people who are done running on survival mode.</p>
+            <p class="shop-membership-cta__price">The Rewire · $179 USD / month</p>
+          </div>
+          <a href="rewire.html" class="btn btn--white" style="flex-shrink:0;font-weight:500;letter-spacing:0.08em;">See What's Inside →</a>
+        </div>
+
+        <!-- AUDIO SERIES HEADER -->
+        <div class="audio-series-header" id="audioHeader">
+          <div class="audio-series-header__left">
+            <p class="product-card-full__category" style="margin-bottom:8px;">Deep Reset Audio Series</p>
+            <h2>Therapeutic audios for deep nervous system reset</h2>
+            <p>Binaural beats, ambient soundscapes, and guided breathwork. Each audio targets a specific state so you have exactly what you need for that moment.</p>
+          </div>
+          <div class="audio-series-header__right">5 targeted audios + bundle</div>
+        </div>
+
+        <!-- BUNDLE -->
+        <article class="product-card-full product-card-full--featured product-card-full--bundle" data-category="audio">
+          <div class="product-card-full__image" style="background:#0d0d1a;">
+            <img src="images/audio-bundle.jpg" alt="Deep Reset Audio Series Bundle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="audio-placeholder audio-placeholder--bundle" style="display:none;">Deep Reset Audio Series Bundle</div>
+            <span class="product-card-full__badge" style="background:var(--amber);color:var(--black);">Best Value</span>
+          </div>
+          <div class="product-card-full__body">
+            <p class="product-card-full__category">Deep Reset Audio Series</p>
+            <span class="bundle-saving-badge">Save $62 · All 5 audios</span>
+            <h3>Deep Reset Audio Series Bundle</h3>
+            <p>Every audio in the series. Built for the moments when you need to regulate fast and don't have time to think about which one to choose. Just pick what matches how you feel right now and press play.</p>
+            <ul class="bundle-includes">
+              <li>When Everything Is Too Much <span style="color:rgba(255,255,255,0.72);">$37</span></li>
+              <li>Reset Your Burnt Out Nervous System <span style="color:rgba(255,255,255,0.72);">$37</span></li>
+              <li>Anxiety and Overthinking Reset <span style="color:rgba(255,255,255,0.72);">$27</span></li>
+              <li>Stop the Night Spiral <span style="color:rgba(255,255,255,0.72);">$27</span></li>
+              <li>Before You Snap <span style="color:rgba(255,255,255,0.72);">$27</span></li>
+            </ul>
+            <div class="product-card-full__footer">
+              <div class="product-card-full__price">$97 <span>USD</span></div>
+              <a href="https://stan.store/Backtobreath/p/deep-reset-audio-series-bundle" target="_blank" class="btn btn--cream">Get the Bundle</a>
+            </div>
+          </div>
+        </article>
+
+                <!-- AUDIO TILES GRID -->
+        <div data-category="audio" style="grid-column:1/-1;">
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+
+            <a href="https://stan.store/Backtobreath/p/sensory-overload-off-switch-" target="_blank" class="audio-tile">
+              <div class="audio-tile__img"><img src="images/audio-too-much.jpg" alt="When Everything Is Too Much" /></div>
+              <div class="audio-tile__body"><h4>When Everything Is Too Much</h4><span class="audio-tile__price">$37</span></div>
+            </a>
+
+            <a href="https://stan.store/Backtobreath/p/reset-your-burnt-out-nervous-system" target="_blank" class="audio-tile">
+              <div class="audio-tile__img"><img src="images/audio-burnout.jpg" alt="Reset Your Burnt Out Nervous System" /></div>
+              <div class="audio-tile__body"><h4>Reset Your Burnt Out Nervous System</h4><span class="audio-tile__price">$37</span></div>
+            </a>
+
+            <a href="https://stan.store/Backtobreath/p/anxiety-and-overthinking-reset-" target="_blank" class="audio-tile">
+              <div class="audio-tile__img"><img src="images/audio-anxiety.jpg" alt="Anxiety and Overthinking Reset" /></div>
+              <div class="audio-tile__body"><h4>Anxiety and Overthinking Reset</h4><span class="audio-tile__price">$27</span></div>
+            </a>
+
+            <a href="https://stan.store/Backtobreath/p/stop-the-night-spiral--deep-reset-audio" target="_blank" class="audio-tile">
+              <div class="audio-tile__img"><img src="images/audio-night-spiral.jpg" alt="Stop the Night Spiral" /></div>
+              <div class="audio-tile__body"><h4>Stop the Night Spiral</h4><span class="audio-tile__price">$27</span></div>
+            </a>
+
+            <a href="https://stan.store/Backtobreath/p/calm-the-rage-release-the-shame-deep-audio-reset" target="_blank" class="audio-tile">
+              <div class="audio-tile__img"><img src="images/audio-before-snap.jpg" alt="Before You Snap" /></div>
+              <div class="audio-tile__body"><h4>Before You Snap</h4><span class="audio-tile__price">$27</span></div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- ADHD CAPACITY PROGRAM WAITLIST -->
+        <article class="product-card-full product-card-full--featured" data-category="live">
+          <div class="product-card-full__image">
+            <img src="images/community.jpg" alt="A group breathwork session with Lucine" />
+            <span class="product-card-full__badge" style="background:var(--amber);color:var(--black);">Waitlist open</span>
+          </div>
+          <div class="product-card-full__body">
+            <p class="product-card-full__category">6 month program</p>
+            <h3>The ADHD Capacity Program</h3>
+            <p>6 months of guided mentorship for ADHD folks who are done just surviving their days. Live group breathwork, structured learning and a community that gets it. Join the waitlist to hear first when the next cohort opens.</p>
+            <div class="product-card-full__footer">
+              <div class="product-card-full__price" style="font-size:1.05rem;">Free to join</div>
+              <a href="adhd-capacity-program.html" class="btn btn--primary">Join the waitlist</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- RETREAT WAITLIST -->
+        <article class="product-card-full product-card-full--featured" data-category="live">
+          <div class="product-card-full__image">
+            <img src="images/yanada-mist.jpg" alt="Morning mist over the retreat valley" style="object-position:center 60%;" />
+            <span class="product-card-full__badge" style="background:var(--amber);color:var(--black);">Waitlist open</span>
+          </div>
+          <div class="product-card-full__body">
+            <p class="product-card-full__category">Retreats</p>
+            <h3>The next Back to Breath retreat</h3>
+            <p>Breathwork, real rest and meals cooked for you. I'm planning the next one now. Tell me if you'd come to a Sydney day retreat or a full weekend away, and be first to hear when dates are set.</p>
+            <div class="product-card-full__footer">
+              <div class="product-card-full__price" style="font-size:1.05rem;">Free to join</div>
+              <a href="retreat.html" class="btn btn--primary">Join the waitlist</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section style="background:var(--cream-pale);border-top:1px solid var(--cream-light);padding:52px 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;">
+      <div>
+        <h2 style="font-size:1.4rem;margin-bottom:8px;">Not sure where to start?</h2>
+        <p style="color:var(--text-muted);font-size:0.92rem;max-width:460px;">Take the free Nervous System Audit. 5 minutes. It tells you exactly which pattern you're stuck in and what your nervous system actually needs to shift.</p>
+      </div>
+      <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" class="btn btn--outline" style="white-space:nowrap;flex-shrink:0;">Get the Free Audit</a>
+    </div>
+  </section>
+
+  </main>
+
+<footer class="footer">
+    <div class="footer__single-row">
+      <a href="index.html" class="footer__brand"><img src="images/logo.png" alt="Back to Breath" /></a>
+      <div class="footer__logos-inline">
+        <img src="https://images.squarespace-cdn.com/content/v1/65d6b28f28b16b590cbdf11a/16f9cdf1-a34c-478b-90eb-6d743fcc929e/ABA+logo.jpg" alt="Australian Breathwork Association" />
+        <img src="https://images.squarespace-cdn.com/content/v1/65d6b28f28b16b590cbdf11a/02dd6ea8-72ef-4b3b-860d-22005fd84ced/blue+white+bg%404x-100.jpg" alt="Certification" />
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="adhdecompress.html">ADHDecompress</a>
+        <a href="adhd-capacity-program.html">Program waitlist</a>
+        <a href="retreat.html">Retreat waitlist</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Writing</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://auspicious-poetry-68204.myflodesk.com/nervoussystemaudit" target="_blank" rel="noopener" class="footer__nav--audit">Free audit</a>
+        <a href="https://auspicious-poetry-68204.myflodesk.com/fm5qvcum5r" target="_blank" rel="noopener">Newsletter</a>
+        <a href="rewire.html" class="footer__nav--cta">The Rewire</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>Back to Breath honours and acknowledges the Cammeraygal people, the Traditional Custodians of the land on which we breathe, live and work.</p>
+      <p>&copy; 2026 Back to Breath. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.add('open');
+    });
+    document.getElementById('navClose').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.remove('open');
+    });
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card-full[data-category]');
+    const membershipCta = document.getElementById('membershipCta');
+    const audioHeader = document.getElementById('audioHeader');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+        membershipCta.style.display = (filter === 'all' || filter === 'audio' || filter === 'session') ? '' : 'none';
+        audioHeader.style.display = (filter === 'all' || filter === 'audio') ? '' : 'none';
+      });
+    });
+  </script>
+<script src="site.js"></script>
+</body>
+</html>
