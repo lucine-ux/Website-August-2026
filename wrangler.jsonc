@@ -1,0 +1,10 @@
+{
+  // Cloudflare settings for the Back to Breath website (static files only).
+  "name": "website-august-2026",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
