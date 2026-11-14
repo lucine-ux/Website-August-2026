@@ -49,7 +49,7 @@
 }
 .hero__eyebrow {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
 }
 .hero__scroll span {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.72);
@@ -138,7 +138,7 @@
 }
 .intro-strip__link {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -187,7 +187,7 @@
 }
 .about-preview__accent p {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -371,13 +371,13 @@
   margin-bottom: 4px;
 }
 .membership__price .period {
-  font-size: 0.85rem;
+  font-size:0.9rem;
   color: rgba(255,255,255,0.72);
   font-weight: 300;
 }
 .badge {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -419,7 +419,7 @@
   justify-content: center;
   flex-shrink: 0;
   margin-top: 1px;
-  font-size: 0.78rem;
+  font-size:0.9rem;
   color: var(--terra);
   font-family: var(--font-heading);
 }
@@ -432,14 +432,14 @@
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 .membership__note {
-  font-size: 0.78rem;
+  font-size:0.9rem;
   color: rgba(255,255,255,0.72);
   font-style: italic;
 }
 .membership__community-note {
   text-align: center;
   margin-top: 32px;
-  font-size: 0.8rem;
+  font-size:0.9rem;
   color: rgba(255,255,255,0.72);
   font-style: italic;
   letter-spacing: 0.02em;
@@ -491,7 +491,7 @@
 }
 .testimonial__author {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -658,7 +658,7 @@
 }
 .newsletter__form-label {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -682,7 +682,7 @@
 .newsletter__input::placeholder { color: rgba(255,255,255,0.72); }
 .newsletter__input:focus { border-color: rgba(124,129,164,0.5); }
 .newsletter__note {
-  font-size: 0.72rem;
+  font-size:0.9rem;
   color: rgba(255,255,255,0.72);
   margin-top: 12px;
   font-style: italic;
@@ -738,14 +738,14 @@
 .reviews__google-badge:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 .reviews__stars {
   color: #fbbc04;
-  font-size: 0.85rem;
+  font-size:0.9rem;
   letter-spacing: 1px;
   line-height: 1;
   margin-bottom: 2px;
 }
 .reviews__count {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--text-muted);
@@ -762,7 +762,7 @@
 }
 .testimonial__stars {
   color: #fbbc04;
-  font-size: 0.75rem;
+  font-size:0.9rem;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
@@ -779,7 +779,7 @@
 .hero { background: var(--plum); }
 .hero__bg { background: linear-gradient(135deg, #2b2530 0%, #4B3A57 60%, #6b5578 100%); }
 .hero__overlay { background: linear-gradient(to top, rgba(26,20,31,0.92) 0%, rgba(26,20,31,0.62) 50%, rgba(26,20,31,0.3) 100%); }
-.hero__eyebrow { font-size: 0.82rem; letter-spacing: 0.14em; color: #F6E3BF; font-weight: 600; }
+.hero__eyebrow { font-size:0.9rem; letter-spacing: 0.14em; color: #F6E3BF; font-weight: 600; }
 .hero__eyebrow::before { background: #F6E3BF; }
 .hero h1 { font-weight: 400; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,0.35); }
 .hero h1 em { color: #fff; font-weight: 300; }

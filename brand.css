@@ -146,3 +146,33 @@ h1 em, h2 em, h3 em, .hero h1 em { font-weight: inherit !important; font-style: 
 .label::before { background: var(--plum); }
 .hero h1 { font-weight: 800 !important; letter-spacing: -0.025em; }
 h1 { font-weight: 800 !important; letter-spacing: -0.025em; }
+
+/* Design rules: no small labels above headings, no 01 02 03 numbering where order doesn't matter.
+   Labels that carry real information (price, waitlist, live online) stay as a small pill. */
+.ed-kicker:not(.keep), .label:not(.keep), .hero__eyebrow { display: none !important; }
+.ed-kicker.keep, .label.keep {
+  display: inline-flex !important; align-items: center; gap: 6px; width: auto;
+  background: var(--lilac); color: var(--deep) !important; border-radius: 999px;
+  padding: 5px 14px; font-size: 0.88rem; font-weight: 600; text-transform: none; letter-spacing: 0;
+}
+.label.keep::before, .ed-kicker.keep::before { display: none; }
+.voice .ed-kicker.keep, .ed-section--plum .ed-kicker.keep, .label--light.keep { background: rgba(217,207,240,0.18); color: var(--lilac) !important; }
+.ed-card .n, .change-card__num { display: none !important; }
+
+/* Readability and tap targets (tested at phone size) */
+.footer, .footer a, .footer p, .footer li, .footer__nav a, .footer__bottom, .footer__bottom p { font-size: 15px !important; }
+.footer__nav a { padding: 10px 12px !important; display: inline-block; }
+label, .wl label, form label { font-size: 15px !important; }
+cite, figcaption, .voice__who, .voice__row cite, .quote-grid cite, .testimonial cite { font-size: 15px !important; }
+.btn--text { padding-top: 10px; padding-bottom: 10px; display: inline-block; }
+.filter-btn { font-size: 15px; padding-top: 12px; padding-bottom: 12px; }
+.shop-filters__inner { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.newsletter small, .newsletter p { font-size: 15px; }
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  p { font-size: max(1em, 16px); }
+}
+
+/* Sentence case everywhere: no shouty all caps labels or nav */
+body *:not(.sr-only) { text-transform: none !important; }
+.nav a, .nav__links a { letter-spacing: 0 !important; }

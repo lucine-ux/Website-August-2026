@@ -54,7 +54,7 @@
 .shop-filters__inner::-webkit-scrollbar { display: none; }
 .filter-btn {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -124,7 +124,7 @@
   top: 14px;
   left: 14px;
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -146,7 +146,7 @@
 }
 .product-card-full__category {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size:0.9rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -180,13 +180,13 @@
   color: var(--black);
 }
 .product-card-full__price span {
-  font-size: 0.75rem;
+  font-size:0.9rem;
   font-weight: 400;
   color: var(--text-muted);
   margin-left: 4px;
 }
 .product-card-full .btn {
-  font-size: 0.78rem;
+  font-size:0.9rem;
   padding: 10px 20px;
 }
 
