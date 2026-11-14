@@ -145,3 +145,4 @@ h1 em, h2 em, h3 em, .hero h1 em { font-weight: inherit !important; font-style: 
 .label { text-transform: none; letter-spacing: 0.01em; font-weight: 600; color: var(--plum); font-size: 0.95rem; }
 .label::before { background: var(--plum); }
 .hero h1 { font-weight: 800 !important; letter-spacing: -0.025em; }
+h1 { font-weight: 800 !important; letter-spacing: -0.025em; }
