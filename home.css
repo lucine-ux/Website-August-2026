@@ -797,6 +797,6 @@
 .hero__bg img.hero__photo { object-position: 50% 28%; }
 @media (min-width: 900px) {
   .hero__bg { background: #2A1A33; }
-  .hero__bg img.hero__photo { width: 52%; object-position: 50% 30%; }
+  .hero__bg img.hero__photo { width: 60%; object-position: 40% 30%; }
   .hero .hero__bg + .hero__overlay, .hero .hero__overlay { background: linear-gradient(to left, rgba(42,26,51,1) 0%, rgba(42,26,51,1) 44%, rgba(42,26,51,0) 56%), linear-gradient(to top, rgba(42,26,51,0.55) 0%, rgba(42,26,51,0) 35%); }
 }
