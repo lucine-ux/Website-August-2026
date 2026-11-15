@@ -2,3 +2,5 @@
   Access-Control-Allow-Origin: *
 /images/lucine-*
   Access-Control-Allow-Origin: *
+/adhdecompress-invite*
+  X-Robots-Tag: noindex
