@@ -792,3 +792,11 @@
   .hero__inner { margin-left: auto; max-width: 600px; }
   .hero__overlay { background: linear-gradient(to left, rgba(26,20,31,0.88) 0%, rgba(26,20,31,0.72) 45%, rgba(26,20,31,0.1) 80%), linear-gradient(to top, rgba(26,20,31,0.7) 0%, rgba(26,20,31,0) 50%); }
 }
+
+/* Hero: studio portrait. Phone: full bleed with her face near the top. Desktop: photo fills the left side, text on deep plum to the right. */
+.hero__bg img.hero__photo { object-position: 50% 28%; }
+@media (min-width: 900px) {
+  .hero__bg { background: #2A1A33; }
+  .hero__bg img.hero__photo { width: 52%; object-position: 50% 30%; }
+  .hero__overlay { background: linear-gradient(to left, rgba(42,26,51,1) 0%, rgba(42,26,51,1) 44%, rgba(42,26,51,0) 56%), linear-gradient(to top, rgba(42,26,51,0.55) 0%, rgba(42,26,51,0) 35%); }
+}
