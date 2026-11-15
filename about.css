@@ -215,7 +215,8 @@
 .about-hero__bg img.about-hero__photo { object-position: 62% 30%; }
 .about-hero .about-hero__overlay { background: linear-gradient(to top, rgba(42,26,51,0.9) 0%, rgba(42,26,51,0.45) 40%, rgba(42,26,51,0) 70%); }
 @media (min-width: 900px) {
-  .about-hero__bg img.about-hero__photo { object-position: 50% 35%; }
-  .about-hero .about-hero__overlay { background: linear-gradient(to right, rgba(42,26,51,0.85) 0%, rgba(42,26,51,0.55) 38%, rgba(42,26,51,0) 60%), linear-gradient(to top, rgba(42,26,51,0.6) 0%, rgba(42,26,51,0) 40%); }
-  .about-hero__inner { max-width: 560px; }
+  .about-hero__bg { background: #2A1A33; }
+  .about-hero__bg img.about-hero__photo { position: absolute; right: 0; top: 0; width: 58%; height: 100%; object-position: 62% 30%; }
+  .about-hero .about-hero__overlay { background: linear-gradient(to right, rgba(42,26,51,1) 0%, rgba(42,26,51,1) 42%, rgba(42,26,51,0) 56%); }
+  .about-hero__inner { max-width: 520px; }
 }
