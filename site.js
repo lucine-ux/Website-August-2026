@@ -15,7 +15,7 @@ window.BTB = {
   // 1b. The personal invite page (adhdecompress-invite.html). Only linked from the waitlist emails.
   //     PASTE YOUR $47 USD HEARTBEAT LINK between the quotes below. While it is empty, the buttons on
   //     the invite page say "Checkout opens soon" and do nothing.
-  DECOMPRESS_INVITE_URL: "",
+  DECOMPRESS_INVITE_URL: "https://app.heartbeat.chat/backtobreath/invitation?code=E642A9",
   DECOMPRESS_INVITE_PRICE: "$47 USD",
 
   // 2. Where waitlist sign ups are sent (a Cloudflare Worker or form URL that accepts JSON:
