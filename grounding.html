@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <title>Free grounding practice for ADHD folks | Back to Breath</title>
+  <meta name="description" content="A free guided grounding practice for ADHD folks who feel scattered or on edge. Close your eyes and let Lucine guide you back into your body." />
+  <link rel="canonical" href="https://www.backtobreath.net.au/grounding" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.backtobreath.net.au/grounding" />
+  <meta property="og:title" content="A free grounding practice for your ADHD body" />
+  <meta property="og:description" content="Close your eyes and let Lucine guide you back into your body." />
+  <meta property="og:image" content="https://www.backtobreath.net.au/images/og-image.jpg" />
+  <meta property="og:locale" content="en_AU" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#3B1F4A" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH38435FVH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PH38435FVH');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F7F1E6; --cream-deep: #EDE3D1; --lilac: #D9CFF0; --white: #FFFCF7;
+      --ink: #2A1A33; --ink-soft: #5A4A63; --plum: #6B4C9A; --deep: #3B1F4A; --coral: #FF8A5B;
+      --head: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+      --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --r: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: var(--plum); }
+    h1, h2, h3 { font-family: var(--head); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    h1 em, h2 em { font-style: normal; color: var(--plum); }
+    :focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+    .dark :focus-visible { outline-color: var(--coral); }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* Top bar */
+    .top { padding: 18px 0; }
+    .top .wrap { display: flex; align-items: center; justify-content: space-between; max-width: 1040px; }
+    .top img { width: 52px; height: 52px; border-radius: 10px; }
+    .top a.home { font-size: 15px; font-weight: 500; text-decoration: none; padding: 10px 4px; }
+
+    /* Hero */
+    .hero { padding: 40px 0 56px; text-align: center; }
+    .hero h1 { font-size: clamp(2.3rem, 7vw, 3.6rem); font-weight: 800; letter-spacing: -0.025em; }
+    .hero p { font-size: 1.15rem; color: var(--ink-soft); max-width: 30em; margin: 20px auto 0; }
+    .hero .facts { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .hero .facts span { background: var(--lilac); color: var(--deep); border-radius: 999px; padding: 6px 16px; font-size: 15px; font-weight: 600; }
+
+    /* Practice set up */
+    .dark { background: var(--deep); color: var(--cream); }
+    .setup { padding: 64px 0 72px; }
+    .setup h2 { color: var(--cream); font-size: clamp(1.8rem, 5vw, 2.4rem); }
+    .q { margin-top: 44px; }
+    .q:first-of-type { margin-top: 30px; }
+    .q h3 { font-size: 1.25rem; color: var(--cream); margin-bottom: 14px; }
+    .q .hint { color: rgba(247,241,230,0.82); font-size: 15px; margin-top: -8px; margin-bottom: 14px; }
+
+    .scale { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
+    .scale button { font: 600 1rem var(--body); color: var(--cream); background: rgba(247,241,230,0.08); border: 1.5px solid rgba(247,241,230,0.25); border-radius: 12px; min-height: 48px; cursor: pointer; transition: background .2s, color .2s; }
+    .scale button:hover { background: rgba(247,241,230,0.16); }
+    .scale button[aria-pressed="true"] { background: var(--lilac); color: var(--deep); border-color: var(--lilac); }
+    .scale-ends { display: flex; justify-content: space-between; font-size: 15px; color: rgba(247,241,230,0.82); margin-top: 8px; }
+
+    .lede { font-size: 1.1rem; color: rgba(247,241,230,0.9); margin-top: 14px; max-width: 32em; }
+    .player { margin-top: 44px; display: flex; align-items: center; gap: 18px; background: rgba(247,241,230,0.07); border: 1.5px solid rgba(247,241,230,0.18); border-radius: 24px; padding: 18px; }
+    .play { flex-shrink: 0; width: 76px; height: 76px; border-radius: 50%; border: 0; background: var(--coral); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: background .2s, transform .2s; }
+    .play:hover { background: var(--cream); }
+    .play svg { width: 32px; height: 32px; }
+    .play .i-pause, .player.playing .play .i-play { display: none; }
+    .player.playing .play .i-pause { display: block; }
+    .track { flex: 1; min-width: 0; }
+    .track strong { display: block; font-family: var(--head); font-size: 1.1rem; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .track input[type=range] { width: 100%; accent-color: var(--lilac); height: 28px; cursor: pointer; }
+    .times { display: flex; justify-content: space-between; font-size: 15px; color: rgba(247,241,230,0.82); font-variant-numeric: tabular-nums; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; font: 700 1.05rem var(--body); text-decoration: none; border: 0; border-radius: 999px; padding: 18px 34px; min-height: 56px; cursor: pointer; transition: background .2s, color .2s; }
+    .start-note { text-align: left; font-size: 15px; color: rgba(247,241,230,0.82); margin-top: 14px; }
+
+    /* How to */
+    .how { padding: 72px 0; }
+    .how .wrap { max-width: 1040px; display: grid; gap: 40px; align-items: center; }
+    .how figure img { border-radius: var(--r); aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 50%; width: 100%; box-shadow: 0 30px 60px -30px rgba(59,31,74,0.45); }
+    .how h2 { font-size: clamp(1.8rem, 5vw, 2.4rem); margin-bottom: 20px; }
+    .how ul { list-style: none; display: grid; gap: 12px; }
+    .how li { padding-left: 1.6em; position: relative; }
+    .how li::before { content: "\2192"; position: absolute; left: 0; color: var(--plum); font-weight: 700; }
+    .care { margin-top: 24px; font-size: 15px; color: var(--ink-soft); background: var(--cream-deep); border-radius: 14px; padding: 14px 18px; }
+    @media (min-width: 860px) { .how .wrap { grid-template-columns: 5fr 6fr; gap: 64px; } }
+
+    /* After */
+    .after { padding: 64px 0 8px; display: none; }
+    .after.show { display: block; }
+    .after h2 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+    .after .q h3, .after .scale-ends, .after .hint { color: var(--ink); }
+    .after .scale-ends { color: var(--ink-soft); }
+    .after .scale button { color: var(--ink); background: var(--white); border-color: rgba(42,26,51,0.16); }
+    .after .scale button:hover { background: var(--lilac); }
+    .after .scale button[aria-pressed="true"] { background: var(--deep); color: var(--cream); border-color: var(--deep); }
+    .result { margin-top: 24px; font-family: var(--head); font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; min-height: 1.3em; }
+    .result small { display: block; font-family: var(--body); font-size: 1rem; font-weight: 400; color: var(--ink-soft); margin-top: 8px; letter-spacing: 0; }
+
+    /* Invite */
+    .invite { padding: 72px 0 80px; }
+    .invite .card { background: var(--lilac); border-radius: 28px; padding: 40px 28px; text-align: center; }
+    .invite img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: center 25%; margin: 0 auto 20px; border: 4px solid var(--cream); }
+    .invite h2 { font-size: clamp(1.7rem, 5vw, 2.2rem); }
+    .invite p { margin: 16px auto 0; max-width: 30em; color: var(--ink); }
+    .invite .btn { background: var(--coral); color: var(--ink); margin-top: 28px; }
+    .invite .btn:hover { background: var(--deep); color: var(--cream); }
+    .invite [data-for="waitlist"] { display: none; }
+    body.from-waitlist .invite [data-for="public"] { display: none; }
+    body.from-waitlist .invite [data-for="waitlist"] { display: block; }
+
+    footer { background: var(--cream-deep); padding: 36px 0 44px; text-align: center; font-size: 15px; color: var(--ink-soft); }
+    footer img { width: 56px; margin: 0 auto 16px; border-radius: 8px; }
+    footer p { max-width: 34em; margin: 0 auto; }
+    footer nav { margin-top: 14px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    footer nav a { padding: 10px 12px; font-weight: 500; text-decoration: none; }
+
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="index.html" aria-label="Back to Breath home"><img src="images/logo.png" alt="Back to Breath" /></a>
+    <a class="home" href="index.html">backtobreath.net.au</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>A free grounding practice for your <em>ADHD</em> body</h1>
+      <p>For when you're scattered, on edge and kind of floating above yourself. Close your eyes and let my voice bring you back into your body.</p>
+      <div class="facts"><span>Grounding</span><span>Eyes closed</span><span>Free</span></div>
+    </div>
+  </section>
+
+  <section class="setup dark" id="setup" aria-labelledby="setupTitle">
+    <div class="wrap">
+      <h2 id="setupTitle">Your grounding practice</h2>
+      <p class="lede">Sit or lie down, press play and follow my voice. You don't need to do it right. You just need to be here.</p>
+
+      <div class="q" id="beforeQ">
+        <h3 id="beforeLabel">First, how buzzy is your body right now?</h3>
+        <div class="scale" role="group" aria-labelledby="beforeLabel" data-scale="before"></div>
+        <div class="scale-ends"><span>1 calm</span><span>10 can't sit still</span></div>
+      </div>
+
+      <div class="player" id="player">
+        <button type="button" class="play" id="playBtn" aria-label="Play the practice">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+        </button>
+        <div class="track">
+          <strong>Grounding practice with Lucine</strong>
+          <input type="range" id="seek" min="0" max="100" value="0" step="1" aria-label="Where you are in the practice" />
+          <div class="times"><span id="cur">0:00</span><span id="dur"></span></div>
+        </div>
+      </div>
+      <p class="start-note" id="audioNote">Press play, put your phone down and close your eyes. It keeps playing if your screen turns off.</p>
+      <audio id="audio" preload="metadata" src="audio/grounding.mp3"></audio>
+    </div>
+  </section>
+
+  <section class="after" id="after" aria-labelledby="afterTitle" tabindex="-1">
+    <div class="wrap">
+      <h2 id="afterTitle">Welcome back 💛</h2>
+      <div class="q">
+        <h3 id="afterLabel">How buzzy is your body now?</h3>
+        <div class="scale" role="group" aria-labelledby="afterLabel" data-scale="after"></div>
+        <div class="scale-ends"><span>1 calm</span><span>10 can't sit still</span></div>
+      </div>
+      <p class="result" id="result" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <figure><img src="images/lucine-bedding.jpg" alt="Lucine setting out soft blankets for a breathwork session" loading="lazy" /></figure>
+      <div>
+        <h2 id="howTitle">Before you start</h2>
+        <ul>
+          <li>Lie down or sit back somewhere soft. Your bed is perfect.</li>
+          <li>Headphones are nice, but your phone speaker is fine too.</li>
+          <li>Press play, close your eyes and let my voice do the rest. You don't need to know anything first.</li>
+          <li>Your mind will wander off. That's ADHD, and it's fine. Just come back to my voice.</li>
+          <li>When it ends, take your time opening your eyes.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="invite" aria-labelledby="inviteTitle">
+    <div class="wrap">
+      <div class="card">
+        <img src="images/lucine-sofa.jpg" alt="Lucine Setian" loading="lazy" />
+        <h2 id="inviteTitle">Want to breathe with me?</h2>
+        <div data-for="public">
+          <p>I'm Lucine. I have ADHD and I've been guiding breathwork since 2023. ADHDecompress is 2 weeks of breathwork with me, for ADHD folks who are exhausted but can't switch off.</p>
+          <a class="btn" id="ctaBtn" href="adhdecompress.html#waitlist">Join the ADHDecompress waitlist</a>
+        </div>
+        <div data-for="waitlist">
+          <p>You're already on the ADHDecompress waitlist, so your invite will come straight to your inbox. Until then, come back to this practice as often as you like.</p>
+          <p>And if you feel like it, hit reply on my email and tell me your before and after numbers. I'd love to hear them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html"><img src="images/logo.png" alt="Back to Breath" /></a>
+    <p>Back to Breath honours and acknowledges the Cammeraygal people, the Traditional Custodians of the land on which we breathe, live and work.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="https://www.instagram.com/back.to.breath/">Instagram</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function track(name, params) { try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {} }
+  var state = { before: null, after: null };
+
+  // People arriving from Lucine's waitlist emails see a different closing note
+  if (new URLSearchParams(location.search).get('from') === 'waitlist') document.body.classList.add('from-waitlist');
+
+  // Before and after check in, 1 to 10
+  document.querySelectorAll('[data-scale]').forEach(function (el) {
+    var key = el.getAttribute('data-scale');
+    for (var i = 1; i <= 10; i++) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = i; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', (function (n) { return function () {
+        state[key] = n;
+        el.querySelectorAll('button').forEach(function (x, idx) { x.setAttribute('aria-pressed', idx + 1 === n ? 'true' : 'false'); });
+        if (key === 'after') showResult();
+      }; })(i));
+      el.appendChild(b);
+    }
+  });
+
+  // Audio player
+  var audio = $('audio'), player = $('player'), seek = $('seek'), started = false, done = false, dragging = false;
+  function fmt(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  audio.addEventListener('loadedmetadata', function () { if (isFinite(audio.duration)) { seek.max = Math.floor(audio.duration); $('dur').textContent = fmt(audio.duration); } });
+  audio.addEventListener('timeupdate', function () {
+    if (!dragging) seek.value = Math.floor(audio.currentTime);
+    $('cur').textContent = fmt(audio.currentTime);
+    if (!done && audio.duration && audio.currentTime / audio.duration > 0.9) { done = true; track('practice_complete', { before: state.before || 0 }); }
+  });
+  audio.addEventListener('play', function () {
+    player.classList.add('playing'); $('playBtn').setAttribute('aria-label', 'Pause the practice');
+    if (!started) { started = true; track('practice_start', { before: state.before || 0 }); }
+  });
+  audio.addEventListener('pause', function () { player.classList.remove('playing'); $('playBtn').setAttribute('aria-label', 'Play the practice'); });
+  audio.addEventListener('ended', function () { showAfter(); });
+  audio.addEventListener('error', function () { $('audioNote').textContent = 'The recording is on its way. Check back soon 💛'; });
+  $('playBtn').addEventListener('click', function () { if (audio.paused) { var p = audio.play(); if (p && p.catch) p.catch(function () {}); } else audio.pause(); });
+  seek.addEventListener('input', function () { dragging = true; $('cur').textContent = fmt(seek.value); });
+  seek.addEventListener('change', function () { audio.currentTime = +seek.value; dragging = false; });
+
+  // Lock screen controls on phones
+  if ('mediaSession' in navigator) {
+    try {
+      navigator.mediaSession.metadata = new MediaMetadata({ title: 'Grounding practice', artist: 'Lucine, Back to Breath', artwork: [{ src: 'images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] });
+    } catch (e) {}
+  }
+
+  function showAfter() {
+    var after = $('after');
+    if (after.classList.contains('show')) return;
+    after.classList.add('show');
+    after.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    after.focus({ preventScroll: true });
+  }
+
+  function showResult() {
+    var r = $('result'), b = state.before, a = state.after;
+    if (!a) { r.innerHTML = ''; return; }
+    if (!b) { r.innerHTML = 'You\'re at ' + a + ' now.<small>Next time, pick a number before you press play too, so you can see the change.</small>'; return; }
+    if (a < b) r.innerHTML = 'You went from ' + b + ' to ' + a + '.<small>That\'s your body coming down. You did that.</small>';
+    else r.innerHTML = 'You went from ' + b + ' to ' + a + '.<small>Some days it shifts a lot and some days hardly at all. Both count. Your body is still learning that it\'s allowed to slow down.</small>';
+    track('practice_checkin', { before: b, after: a });
+  }
+
+  $('ctaBtn').addEventListener('click', function () { track('practice_cta', { to: 'adhdecompress_waitlist' }); });
+})();
+</script>
+</body>
+</html>
