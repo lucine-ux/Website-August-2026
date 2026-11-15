@@ -1,6 +1,7 @@
 // Back to Breath form worker: waitlists + The Nervous System Audit.
 // Secrets and IDs live in Cloudflare (Settings > Variables), never in this file:
 //   FLODESK_API_KEY, SEGMENT_RETREAT, SEGMENT_RETREAT_DAY, SEGMENT_RETREAT_WEEKEND, SEGMENT_BASELINE,
+//   SEGMENT_PROGRAM (ADHD Capacity Program waitlist),
 //   SEGMENT_AUDIT_ALL, SEGMENT_AUDIT_AVOIDER, SEGMENT_AUDIT_INTERNALISER, SEGMENT_AUDIT_OVERFUNCTIONER,
 //   SEGMENT_AUDIT_ABSORBER, SEGMENT_AUDIT_CARE (optional), SHEET_WEBHOOK (Google Sheet script URL), SHEET_TOKEN
 const MAP={day:["SEGMENT_RETREAT_DAY"],weekend:["SEGMENT_RETREAT_WEEKEND"],either:["SEGMENT_RETREAT_DAY","SEGMENT_RETREAT_WEEKEND"]};
@@ -24,6 +25,7 @@ if(!/^\S+@\S+\.\S+$/.test(email))return reply({error:"Invalid email"},400);
 const ids=[];let custom=null;let sheetRow=null;
 if(list==="retreat"){if(env.SEGMENT_RETREAT)ids.push(env.SEGMENT_RETREAT);(MAP[format]||[]).forEach(k=>{if(env[k])ids.push(env[k])});if(format)custom={retreat_format:format}}
 else if(list==="baseline"){if(env.SEGMENT_BASELINE)ids.push(env.SEGMENT_BASELINE)}
+else if(list==="program"){if(env.SEGMENT_PROGRAM)ids.push(env.SEGMENT_PROGRAM);const st=clip(body.struggle,250);if(st)custom={program_struggle:st}}
 else if(list==="audit"){
   const a=body.audit||{};
   const type=TYPES.includes(a.type)?a.type:"";const second=TYPES.includes(a.second)?a.second:"";

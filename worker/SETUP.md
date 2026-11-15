@@ -12,4 +12,5 @@ Add these in Cloudflare: Workers > btb-waitlist > Settings > Variables.
 | SEGMENT_AUDIT_ABSORBER | Nervous System Audit: Absorber | 6af8f841aa081bef4356a768 |
 | SEGMENT_AUDIT_CARE | Nervous System Audit: Check on them | 6af8f8149ba48d38bbbe8561 |
 
-Still to add: SHEET_WEBHOOK and SHEET_TOKEN once the Google Sheet script is deployed.
+Deployed 15 Nov 2026 with the six audit segment IDs. FLODESK_API_KEY is now a secret.
+Still to add: SHEET_WEBHOOK and SHEET_TOKEN once the Google Sheet script is deployed, and SEGMENT_PROGRAM for the Capacity Program waitlist.
