@@ -220,3 +220,11 @@
   .about-hero .about-hero__overlay { background: linear-gradient(to right, rgba(42,26,51,1) 0%, rgba(42,26,51,1) 42%, rgba(42,26,51,0) 56%); }
   .about-hero__inner { max-width: 520px; }
 }
+@media (max-width: 899px) {
+  /* Phone: photo on top, words below on deep plum */
+  .about-hero { display: block; min-height: 0; padding-bottom: 48px; background: #2A1A33; }
+  .about-hero__bg { position: relative; height: 56vh; min-height: 380px; }
+  .about-hero__bg img.about-hero__photo { object-position: 62% 30%; }
+  .about-hero .about-hero__overlay { background: linear-gradient(to top, rgba(42,26,51,1) 0%, rgba(42,26,51,0) 30%); }
+  .about-hero__content { margin-top: -24px; position: relative; }
+}
