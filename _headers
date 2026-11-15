@@ -1,2 +1,4 @@
 /images/audio-*
   Access-Control-Allow-Origin: *
+/images/lucine-*
+  Access-Control-Allow-Origin: *
