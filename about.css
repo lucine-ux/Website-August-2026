@@ -210,3 +210,12 @@
   .about-photo-strip { grid-template-columns: 1fr; height: auto; }
   .about-photo-strip__item { height: 220px; }
 }
+
+/* About hero: studio photo. Her face sits right of centre, words sit bottom left on a soft scrim. */
+.about-hero__bg img.about-hero__photo { object-position: 62% 30%; }
+.about-hero .about-hero__overlay { background: linear-gradient(to top, rgba(42,26,51,0.9) 0%, rgba(42,26,51,0.45) 40%, rgba(42,26,51,0) 70%); }
+@media (min-width: 900px) {
+  .about-hero__bg img.about-hero__photo { object-position: 50% 35%; }
+  .about-hero .about-hero__overlay { background: linear-gradient(to right, rgba(42,26,51,0.85) 0%, rgba(42,26,51,0.55) 38%, rgba(42,26,51,0) 60%), linear-gradient(to top, rgba(42,26,51,0.6) 0%, rgba(42,26,51,0) 40%); }
+  .about-hero__inner { max-width: 560px; }
+}
