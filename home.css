@@ -800,3 +800,12 @@
   .hero__bg img.hero__photo { width: 60%; object-position: 40% 30%; }
   .hero .hero__bg + .hero__overlay, .hero .hero__overlay { background: linear-gradient(to left, rgba(42,26,51,1) 0%, rgba(42,26,51,1) 44%, rgba(42,26,51,0) 56%), linear-gradient(to top, rgba(42,26,51,0.55) 0%, rgba(42,26,51,0) 35%); }
 }
+@media (max-width: 899px) {
+  /* Phone: photo on top, words below on deep plum, so the heading never covers her face */
+  .hero { display: block; min-height: 0; padding-bottom: 56px; background: #2A1A33; }
+  .hero__bg { position: relative; height: 64vh; min-height: 420px; }
+  .hero__bg img.hero__photo { object-position: 50% 30%; }
+  .hero .hero__overlay { background: linear-gradient(to top, rgba(42,26,51,1) 0%, rgba(42,26,51,0) 30%); }
+  .hero__content { padding-top: 8px; margin-top: -40px; }
+  .hero__scroll { display: none; }
+}
