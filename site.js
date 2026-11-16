@@ -8,8 +8,15 @@ window.BTB = {
   //    you are ready to open it. While this is empty, every "Join ADHDecompress" button turns
   //    into "Join the waitlist" and scrolls to the waitlist form. Safe to publish early.
   DECOMPRESS_JOIN_URL: "https://app.heartbeat.chat/backtobreath/invitation?code=295E34",
-  //    Shown on the page once the join link is set, e.g. "$47 AUD for 2 weeks".
-  DECOMPRESS_PRICE: "$67 AUD",
+  //    The public price, shown on adhdecompress.html once the join link is set.
+  //    CHECK: the Heartbeat link above should charge $67 USD.
+  DECOMPRESS_PRICE: "$67 USD",
+
+  // 1b. The personal invite page (adhdecompress-invite.html). Only linked from the waitlist emails.
+  //     PASTE YOUR $47 USD HEARTBEAT LINK between the quotes below. While it is empty, the buttons on
+  //     the invite page say "Checkout opens soon" and do nothing.
+  DECOMPRESS_INVITE_URL: "https://app.heartbeat.chat/backtobreath/invitation?code=E642A9",
+  DECOMPRESS_INVITE_PRICE: "$47 USD",
 
   // 2. Where waitlist sign ups are sent (a Cloudflare Worker or form URL that accepts JSON:
   //    { list, name, email, format, struggle }). While this is empty, the form opens a pre filled
@@ -75,6 +82,21 @@ window.BTB = {
   });
   document.querySelectorAll('[data-decompress-price]').forEach(function (el) {
     el.textContent = cfg.DECOMPRESS_PRICE || '';
+  });
+  document.querySelectorAll('[data-invite-join]').forEach(function (a) {
+    if (cfg.DECOMPRESS_INVITE_URL) {
+      a.setAttribute('href', cfg.DECOMPRESS_INVITE_URL);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    } else {
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled', 'true');
+      a.style.opacity = '.6';
+      a.textContent = 'Checkout opens soon';
+    }
+  });
+  document.querySelectorAll('[data-invite-price]').forEach(function (el) {
+    el.textContent = cfg.DECOMPRESS_INVITE_PRICE || '';
   });
   document.querySelectorAll('[data-show-when-open]').forEach(function (el) {
     el.hidden = !(cfg.DECOMPRESS_JOIN_URL && cfg.DECOMPRESS_PRICE);

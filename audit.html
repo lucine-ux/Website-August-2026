@@ -120,7 +120,7 @@ var TYPES = {
     lead:"You keep going and act like you're fine. Nobody around you would guess what it takes to get through a normal day.",
     body:"Masking uses a lot of energy. Your body carries the stress you don't show, and it builds up with nowhere to go. That's why rest doesn't seem to fill the tank.",
     helps:"You don't need another way to cope. You need a way to let it out, somewhere you don't have to perform.",
-    product:{title:"Reset Your Burnt Out Nervous System", price:"$37", url:"https://stan.store/Backtobreath/p/reset-your-burnt-out-nervous-system",
+    product:{title:"Reset Your Burnt Out Nervous System", price:"$37 USD", url:"https://stan.store/Backtobreath/p/reset-your-burnt-out-nervous-system",
       blurb:"For the tired that rest doesn't fix. A guided breathwork reset to let out what you've been carrying."}
   },
   overfunctioner: {
@@ -130,7 +130,7 @@ var TYPES = {
     lead:"When it gets too much, you push harder and take on more. Stopping feels harder than going.",
     body:"Your nervous system is stuck on. It runs on adrenaline, so you keep busy to stay ahead of the crash. Then night comes and your brain won't switch off.",
     helps:"Your body needs to learn it can come down. Gentle breathing helps it come off high alert, so rest can actually land.",
-    product:{title:"Stop the Night Spiral", price:"$27", url:"https://stan.store/Backtobreath/p/stop-the-night-spiral--deep-reset-audio",
+    product:{title:"Stop the Night Spiral", price:"$27 USD", url:"https://stan.store/Backtobreath/p/stop-the-night-spiral--deep-reset-audio",
       blurb:"For when your body finally stops but your brain keeps going. Helps you come down so sleep can come."}
   },
   absorber: {
@@ -278,9 +278,9 @@ function results(){
   h += '<div class="card" style="border:2px solid var(--plum)"><div class="kicker">Made for '+esc(short.toLowerCase())+'s</div><h2 style="margin-bottom:10px">'+esc(t.product.title)+'</h2>'+
     '<p><b>'+esc(t.moment)+'</b></p><p>'+esc(t.product.blurb)+' No steps to remember, no getting it right. Just my voice and your breath.</p>'+
     '<p style="font-style:italic;color:var(--ink-soft,#5A4A63)">"Things were exactly the same, but the undertone to my personal experience was far more calm. It was a subtle thing but amazing the difference it made." <span style="font-style:normal;font-weight:600">Adele H.</span></p>'+
-    '<p><a class="btn primary block" href="'+t.product.url+'" target="_blank" rel="noopener">Get '+esc(t.product.title)+' · <span class="price">'+t.product.price+' USD</span></a></p>'+
+    '<p><a class="btn primary block" href="'+t.product.url+'" target="_blank" rel="noopener">Get '+esc(t.product.title)+' · <span class="price">'+t.product.price+'</span></a></p>'+
     '<p class="small muted" style="margin:0">Yours to keep. Or get <a href="'+AUDIT.BUNDLE_URL+'" target="_blank" rel="noopener">all five audios for $97</a>.</p></div>';
-  if(S.sent==="ok") h += '<div class="card"><h3>Check your inbox 💛</h3><p style="margin:0">I\'ve sent your results, a free meditation and an exercise made for '+esc(short.toLowerCase())+'s. If you can\'t see it, check your promotions or spam folder.</p></div>';
+  if(S.sent==="ok") h += '<div class="card"><h3>Check your inbox 💛</h3><p style="margin:0">I\'ve sent your results, a free meditation and an exercise made for '+esc(short.toLowerCase())+'s. It can take a few minutes. If you can\'t see it, check your junk, spam or promotions folder.</p></div>';
   else if(S.sent==="fail") h += '<div class="card"><h3>Your email didn\'t send</h3><p style="margin:0">Your results are all here, but I couldn\'t send the email. Screenshot this page so you have it.</p></div>';
   h += '<div class="card"><div class="kicker">Want support every week?</div><h3>ADHDecompress</h3><p>A 2 week intro to my ADHD membership. Live breathwork with me twice a week, and a community of people who get it.</p>'+
     '<p style="margin:0"><a class="btn block" href="'+AUDIT.DECOMPRESS_URL+'">Find out about ADHDecompress</a></p></div>';
