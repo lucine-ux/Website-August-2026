@@ -44,3 +44,4 @@
   .post__body { font-size: 1.04rem; }
   .post__buttons .btn { width: 100%; text-align: center; }
 }
+.post__body h3 { font-size: clamp(1.15rem, 3vw, 1.35rem); line-height: 1.25; margin: 1.7em 0 0.45em; }
