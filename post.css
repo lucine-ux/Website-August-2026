@@ -45,3 +45,9 @@
   .post__buttons .btn { width: 100%; text-align: center; }
 }
 .post__body h3 { font-size: clamp(1.15rem, 3vw, 1.35rem); line-height: 1.25; margin: 1.7em 0 0.45em; }
+
+/* Arrow lists inside a post */
+.post__list { list-style: none; padding: 0; margin: 0 0 1.4em; }
+.post__list li { position: relative; padding: 10px 0 10px 30px; border-top: 1px solid var(--border); }
+.post__list li:last-child { border-bottom: 1px solid var(--border); }
+.post__list li::before { content: "\2192"; position: absolute; left: 0; top: 10px; color: var(--plum); font-weight: 700; }
